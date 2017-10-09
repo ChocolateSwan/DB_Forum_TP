@@ -13,8 +13,7 @@ from utils import return_cursor
 
 def create_forum(request):
     cursor, connection = return_cursor()
-    body_unicode = request.body.decode('utf-8')
-    data = json.loads(body_unicode)
+    data = json.loads(request.body.decode('utf-8'))
     print data
     req_select_user =" SELECT id FROM \"User\" where nickname = '{}';"\
         .format(data['user'])
@@ -61,52 +60,21 @@ def create_forum(request):
 
 
 
-    #
-    #     sql = "INSERT INTO forum (slug, title, user_name) VALUES ('%s', '%s', '%s', 0, 0);"\
-    #     % (data[u'slug'],data[u'title'], data[u'user'],)
-    #
-    #     try:
-    #         cur.execute(sql)
-    #         conn.commit()
-    #     except psycopg2.Error as err:
-    #         if err.pgcode == "25P02":
-    #             return JsonResponse({1:2},status=409)
-    #
-    #         print "I can't insert"
-    #     sql = "SELECT posts,slug,threads,title,user_name FROM forum where slug = '%s';"\
-    #     %(data[u'slug'])
-    #
-    #     try:
-    #         cur.execute(sql)
-    #     except:
-    #         print "I can't select"
-    #     row = cur.fetchone()
-    # return JsonResponse( {'posts': row[0],
-    #                       'slug':row[1],
-    #                       'threads': row[2],
-    #                       'title': row[3],
-    #                       'user': row[4]},status=201, )
-
-    return JsonResponse({1:1}, status=201)
-
-
-def detailsForum (request, slug):
-    pass
-    # cursor, connection = returnCursor()
-    # sql = "SELECT posts,slug,threads,title,user_name FROM forum where slug = '%s';" \
-    #       % (slug)
-    #
-    #
-    # try:
-    #     cur.execute(sql)
-    #     row = cur.fetchone()
-    #     return JsonResponse({'posts': row[0],
-    #                          'slug': row[1],
-    #                          'threads': row[2],
-    #                          'title': row[3],
-    #                          'user': row[4]}, status=200, )
-    # except:
-    #     return JsonResponse({"message": "Can't find forum with slug = %s"%(slug)}, status=201, )
+def details_forum (request, slug):
+    cursor, connection = return_cursor()
+    req_select_forum = "SELECT posts, threads, title, user_nickname FROM \"Forum\" where slug = '{}';"\
+        .format(slug)
+    try:
+        cursor.execute(req_select_forum)
+        forum = cursor.fetchone()
+        return JsonResponse({'posts': forum[0],
+                             'slug': slug,
+                             'threads': forum[1],
+                             'title': forum[2],
+                             'user': forum[3]}, status=200, )
+    except:
+        return JsonResponse({"message": "Can't find forum with slug = {}".\
+                            format(slug)}, status=404, )
 
 
 def createThread (request, slug):

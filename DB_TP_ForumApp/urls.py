@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from application.views import create_forum, detailsForum, \
+from application.views import create_forum, details_forum, \
     createThread
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^forum/create', create_forum),
-    url(r'^forum/(?P<slug>\w+)/details', detailsForum),
+    url(r'^forum/(?P<slug>[\w-]+)/details', details_forum),
     url(r'^forum/(?P<slug>\w+)/create', createThread),
 
 ]
