@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56e1e515-b1b4-4f68-9deb-34415b3f0d37" name="Default" comment="" />
+    <list default="true" id="56e1e515-b1b4-4f68-9deb-34415b3f0d37" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" afterPath="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views.py" afterPath="$PROJECT_DIR$/application/views.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,20 +35,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="15" />
+            <state relative-caret-position="151">
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="107" selection-end-column="98" />
               <folding>
-                <marker date="1507567372519" expanded="true" signature="820:909" ph="INSERT INTO forums... " />
-                <marker date="1507567372519" expanded="true" signature="1220:1273" ph="SELECT slug,... forum" />
-                <marker date="1507567372519" expanded="true" signature="1220:1287" ph="SELECT slug,... forum" />
-                <marker date="1507567372519" expanded="true" signature="1220:1290" ph="SELECT posts... forum" />
-                <marker date="1507567372519" expanded="true" signature="1220:1291" ph="SELECT * FRO... forum" />
-                <marker date="1507567372519" expanded="true" signature="1261:1273" ph="INSERT INTO forum... " />
-                <marker date="1507567372519" expanded="true" signature="1748:1818" ph="SELECT posts... forum" />
-                <marker date="1507567372519" expanded="true" signature="2375:2466" ph="INSERT INTO forum... " />
+                <element signature="e#24#63#0" expanded="true" />
+                <element signature="e#302#3134#0" expanded="false" />
+                <marker date="1507571655694" expanded="true" signature="461:482" ph="SELECT id, n... " />
+                <marker date="1507571655694" expanded="true" signature="461:506" ph="SELECT posts... forum" />
+                <marker date="1507571655694" expanded="true" signature="461:539" ph="SELECT id FR... User" />
+                <marker date="1507571655694" expanded="true" signature="873:964" ph="INSERT INTO forum... " />
+                <marker date="1507571655694" expanded="true" signature="1282:1349" ph="SELECT posts... Forum" />
+                <marker date="1507571655694" expanded="true" signature="2201:2275" ph="INSERT INTO forums... " />
+                <marker date="1507571655694" expanded="true" signature="2614:2667" ph="SELECT slug,... forum" />
+                <marker date="1507571655694" expanded="true" signature="2614:2681" ph="SELECT slug,... forum" />
+                <marker date="1507571655694" expanded="true" signature="2614:2684" ph="SELECT posts... forum" />
+                <marker date="1507571655694" expanded="true" signature="2614:2685" ph="SELECT * FRO... forum" />
+                <marker date="1507571655694" expanded="true" signature="2655:2667" ph="INSERT INTO forum... " />
+                <marker date="1507571655694" expanded="true" signature="3226:3296" ph="SELECT posts... forum" />
+                <marker date="1507571655694" expanded="true" signature="3900:3991" ph="INSERT INTO forum... " />
               </folding>
             </state>
           </provider>
@@ -53,8 +64,8 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            <state relative-caret-position="57">
+              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -70,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vote_table.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Vote_table.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/Vote_table.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
@@ -89,13 +100,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/DB_TP_ForumApp/settings.py" />
         <option value="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" />
-        <option value="$PROJECT_DIR$/application/views.py" />
         <option value="$PROJECT_DIR$/application/utils.py" />
+        <option value="$PROJECT_DIR$/application/views.py" />
       </list>
     </option>
   </component>
@@ -107,10 +121,11 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="60" />
-    <option name="y" value="-1091" />
+    <option name="y" value="-11" />
     <option name="width" value="1861" />
     <option name="height" value="1092" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -221,17 +236,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="60" y="-1091" width="1861" height="1092" extended-state="6" />
+    <frame x="60" y="-11" width="1861" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25261998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25261998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -240,7 +257,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -276,15 +292,46 @@
         <state relative-caret-position="1767">
           <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
-            <marker date="1507567372519" expanded="true" signature="820:909" ph="INSERT INTO forums... " />
-            <marker date="1507567372519" expanded="true" signature="1220:1273" ph="SELECT slug,... forum" />
-            <marker date="1507567372519" expanded="true" signature="1220:1287" ph="SELECT slug,... forum" />
-            <marker date="1507567372519" expanded="true" signature="1220:1290" ph="SELECT posts... forum" />
-            <marker date="1507567372519" expanded="true" signature="1220:1291" ph="SELECT * FRO... forum" />
-            <marker date="1507567372519" expanded="true" signature="1261:1273" ph="INSERT INTO forum... " />
-            <marker date="1507567372519" expanded="true" signature="1748:1818" ph="SELECT posts... forum" />
-            <marker date="1507567372519" expanded="true" signature="2375:2466" ph="INSERT INTO forum... " />
+            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#302#3134#0" expanded="false" />
+            <marker date="1507571655694" expanded="true" signature="461:482" ph="SELECT id, n... " />
+            <marker date="1507571655694" expanded="true" signature="461:506" ph="SELECT posts... forum" />
+            <marker date="1507571655694" expanded="true" signature="461:539" ph="SELECT id FR... User" />
+            <marker date="1507571655694" expanded="true" signature="873:964" ph="INSERT INTO forum... " />
+            <marker date="1507571655694" expanded="true" signature="1282:1349" ph="SELECT posts... Forum" />
+            <marker date="1507571655694" expanded="true" signature="2201:2275" ph="INSERT INTO forums... " />
+            <marker date="1507571655694" expanded="true" signature="2614:2667" ph="SELECT slug,... forum" />
+            <marker date="1507571655694" expanded="true" signature="2614:2681" ph="SELECT slug,... forum" />
+            <marker date="1507571655694" expanded="true" signature="2614:2684" ph="SELECT posts... forum" />
+            <marker date="1507571655694" expanded="true" signature="2614:2685" ph="SELECT * FRO... forum" />
+            <marker date="1507571655694" expanded="true" signature="2655:2667" ph="INSERT INTO forum... " />
+            <marker date="1507571655694" expanded="true" signature="3226:3296" ph="SELECT posts... forum" />
+            <marker date="1507571655694" expanded="true" signature="3900:3991" ph="INSERT INTO forum... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum_table">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/Forum_table">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/Vote_table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -304,52 +351,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="15" />
-          <folding>
-            <marker date="1507567372519" expanded="true" signature="820:909" ph="INSERT INTO forums... " />
-            <marker date="1507567372519" expanded="true" signature="1220:1273" ph="SELECT slug,... forum" />
-            <marker date="1507567372519" expanded="true" signature="1220:1287" ph="SELECT slug,... forum" />
-            <marker date="1507567372519" expanded="true" signature="1220:1290" ph="SELECT posts... forum" />
-            <marker date="1507567372519" expanded="true" signature="1220:1291" ph="SELECT * FRO... forum" />
-            <marker date="1507567372519" expanded="true" signature="1261:1273" ph="INSERT INTO forum... " />
-            <marker date="1507567372519" expanded="true" signature="1748:1818" ph="SELECT posts... forum" />
-            <marker date="1507567372519" expanded="true" signature="2375:2466" ph="INSERT INTO forum... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum_table">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        <state relative-caret-position="57">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/Forum_table">
+    <entry file="file://$PROJECT_DIR$/application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/Vote_table.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="151">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="107" selection-end-column="98" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#302#3134#0" expanded="false" />
+            <marker date="1507571655694" expanded="true" signature="461:482" ph="SELECT id, n... " />
+            <marker date="1507571655694" expanded="true" signature="461:506" ph="SELECT posts... forum" />
+            <marker date="1507571655694" expanded="true" signature="461:539" ph="SELECT id FR... User" />
+            <marker date="1507571655694" expanded="true" signature="873:964" ph="INSERT INTO forum... " />
+            <marker date="1507571655694" expanded="true" signature="1282:1349" ph="SELECT posts... Forum" />
+            <marker date="1507571655694" expanded="true" signature="2201:2275" ph="INSERT INTO forums... " />
+            <marker date="1507571655694" expanded="true" signature="2614:2667" ph="SELECT slug,... forum" />
+            <marker date="1507571655694" expanded="true" signature="2614:2681" ph="SELECT slug,... forum" />
+            <marker date="1507571655694" expanded="true" signature="2614:2684" ph="SELECT posts... forum" />
+            <marker date="1507571655694" expanded="true" signature="2614:2685" ph="SELECT * FRO... forum" />
+            <marker date="1507571655694" expanded="true" signature="2655:2667" ph="INSERT INTO forum... " />
+            <marker date="1507571655694" expanded="true" signature="3226:3296" ph="SELECT posts... forum" />
+            <marker date="1507571655694" expanded="true" signature="3900:3991" ph="INSERT INTO forum... " />
+          </folding>
         </state>
       </provider>
     </entry>
