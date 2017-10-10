@@ -1,11 +1,8 @@
-﻿
-
 ﻿CREATE TABLE Vote
 (
     id SERIAL PRIMARY KEY NOT NULL,
     thread_id INT NOT NULL,
     user_id INT NOT NULL,
-    user_nickname CITEXT COLLATE pg_catalog.ucs_basic NOT NULL,
     vote INT NOT NULL,
 
 

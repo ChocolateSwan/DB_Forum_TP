@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56e1e515-b1b4-4f68-9deb-34415b3f0d37" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/Vote_table" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/settings" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/Forum_table" afterPath="$PROJECT_DIR$/database/Furum_table.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/Post_table" afterPath="$PROJECT_DIR$/database/Post_table.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/Tread_table" afterPath="$PROJECT_DIR$/database/Thread_table.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/User_table" afterPath="$PROJECT_DIR$/database/User_table.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" afterPath="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/utils.py" afterPath="$PROJECT_DIR$/application/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views.py" afterPath="$PROJECT_DIR$/application/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/Vote_table.sql" afterPath="$PROJECT_DIR$/database/Vote_table.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,41 +26,37 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="893">
               <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            <state relative-caret-position="466">
+              <caret line="97" column="40" lean-forward="false" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
               <folding>
-                <element signature="e#648#680#0" expanded="true" />
+                <element signature="e#24#63#0" expanded="true" />
+                <element signature="e#1993#2638#0" expanded="false" />
+                <marker date="1507622681586" expanded="true" signature="649:740" ph="INSERT INTO forum... " />
+                <marker date="1507622681586" expanded="true" signature="1058:1125" ph="SELECT posts... Forum" />
+                <marker date="1507622681586" expanded="true" signature="2054:2130" ph="SELECT posts... forum" />
+                <marker date="1507622681586" expanded="true" signature="3406:3556" ph="INSERT INTO thread... " />
+                <marker date="1507622681586" expanded="true" signature="3758:3849" ph="INSERT INTO forum... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views.py">
+      <file leaf-file-name="Post_table.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/Post_table.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="74" column="10" lean-forward="false" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-                <element signature="e#302#2142#0" expanded="false" />
-                <marker date="1507573686461" expanded="true" signature="429:450" ph="SELECT id, n... " />
-                <marker date="1507573686461" expanded="true" signature="429:474" ph="SELECT posts... forum" />
-                <marker date="1507573686461" expanded="true" signature="429:507" ph="SELECT id FR... User" />
-                <marker date="1507573686461" expanded="true" signature="841:932" ph="INSERT INTO forum... " />
-                <marker date="1507573686461" expanded="true" signature="1250:1317" ph="SELECT posts... Forum" />
-                <marker date="1507573686461" expanded="true" signature="2246:2322" ph="SELECT posts... forum" />
-                <marker date="1507573686461" expanded="true" signature="2957:3048" ph="INSERT INTO forum... " />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,29 +64,12 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Forum_table" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/Forum_table">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vote_table.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/Vote_table.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="456">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <marker date="1507581977684" expanded="true" signature="379:424" ph="SELECT id FR... User" />
+                <marker date="1507581977684" expanded="true" signature="719:761" ph="SELECT id FR... Forum" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,8 +90,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/DB_TP_ForumApp/settings.py" />
-        <option value="$PROJECT_DIR$/application/utils.py" />
         <option value="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" />
+        <option value="$PROJECT_DIR$/application/utils.py" />
         <option value="$PROJECT_DIR$/application/views.py" />
       </list>
     </option>
@@ -115,8 +103,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1980" />
-    <option name="y" value="-1091" />
+    <option name="x" value="60" />
+    <option name="y" value="1069" />
     <option name="width" value="1861" />
     <option name="height" value="1092" />
   </component>
@@ -136,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,6 +157,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,15 +219,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1980" y="-1091" width="1861" height="1092" extended-state="6" />
+    <frame x="60" y="1069" width="1861" height="1092" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25261998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25537783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -261,7 +249,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -273,39 +263,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
+    <entry file="file://$PROJECT_DIR$/application/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="456">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#648#680#0" expanded="true" />
+            <marker date="1507581977684" expanded="true" signature="379:424" ph="SELECT id FR... User" />
+            <marker date="1507581977684" expanded="true" signature="719:761" ph="SELECT id FR... Forum" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/Forum_table">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1767">
-          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state relative-caret-position="1577">
+          <caret line="97" column="40" lean-forward="true" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <element signature="e#302#2142#0" expanded="false" />
-            <marker date="1507573686461" expanded="true" signature="429:450" ph="SELECT id, n... " />
-            <marker date="1507573686461" expanded="true" signature="429:474" ph="SELECT posts... forum" />
-            <marker date="1507573686461" expanded="true" signature="429:507" ph="SELECT id FR... User" />
-            <marker date="1507573686461" expanded="true" signature="841:932" ph="INSERT INTO forum... " />
-            <marker date="1507573686461" expanded="true" signature="1250:1317" ph="SELECT posts... Forum" />
-            <marker date="1507573686461" expanded="true" signature="2246:2322" ph="SELECT posts... forum" />
-            <marker date="1507573686461" expanded="true" signature="2957:3048" ph="INSERT INTO forum... " />
+            <element signature="e#1993#2638#0" expanded="false" />
+            <marker date="1507622681586" expanded="true" signature="649:740" ph="INSERT INTO forum... " />
+            <marker date="1507622681586" expanded="true" signature="1058:1125" ph="SELECT posts... Forum" />
+            <marker date="1507622681586" expanded="true" signature="2054:2130" ph="SELECT posts... forum" />
+            <marker date="1507622681586" expanded="true" signature="3406:3556" ph="INSERT INTO thread... " />
+            <marker date="1507622681586" expanded="true" signature="3758:3849" ph="INSERT INTO forum... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum_table">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -319,7 +308,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="893">
           <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding />
         </state>
@@ -327,45 +316,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        <state relative-caret-position="342">
+          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1767">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
-            <element signature="e#648#680#0" expanded="true" />
+            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#1993#2638#0" expanded="false" />
+            <marker date="1507622681586" expanded="true" signature="649:740" ph="INSERT INTO forum... " />
+            <marker date="1507622681586" expanded="true" signature="1058:1125" ph="SELECT posts... Forum" />
+            <marker date="1507622681586" expanded="true" signature="2054:2130" ph="SELECT posts... forum" />
+            <marker date="1507622681586" expanded="true" signature="3406:3556" ph="INSERT INTO thread... " />
+            <marker date="1507622681586" expanded="true" signature="3758:3849" ph="INSERT INTO forum... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum_table" />
+    <entry file="file://$PROJECT_DIR$/database/Vote_table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/Forum_table">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="456">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <marker date="1507581977684" expanded="true" signature="379:424" ph="SELECT id FR... User" />
+            <marker date="1507581977684" expanded="true" signature="719:761" ph="SELECT id FR... Forum" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="74" column="10" lean-forward="false" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
+        <state relative-caret-position="466">
+          <caret line="97" column="40" lean-forward="false" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <element signature="e#302#2142#0" expanded="false" />
-            <marker date="1507573686461" expanded="true" signature="429:450" ph="SELECT id, n... " />
-            <marker date="1507573686461" expanded="true" signature="429:474" ph="SELECT posts... forum" />
-            <marker date="1507573686461" expanded="true" signature="429:507" ph="SELECT id FR... User" />
-            <marker date="1507573686461" expanded="true" signature="841:932" ph="INSERT INTO forum... " />
-            <marker date="1507573686461" expanded="true" signature="1250:1317" ph="SELECT posts... Forum" />
-            <marker date="1507573686461" expanded="true" signature="2246:2322" ph="SELECT posts... forum" />
-            <marker date="1507573686461" expanded="true" signature="2957:3048" ph="INSERT INTO forum... " />
+            <element signature="e#1993#2638#0" expanded="false" />
+            <marker date="1507622681586" expanded="true" signature="649:740" ph="INSERT INTO forum... " />
+            <marker date="1507622681586" expanded="true" signature="1058:1125" ph="SELECT posts... Forum" />
+            <marker date="1507622681586" expanded="true" signature="2054:2130" ph="SELECT posts... forum" />
+            <marker date="1507622681586" expanded="true" signature="3406:3556" ph="INSERT INTO thread... " />
+            <marker date="1507622681586" expanded="true" signature="3758:3849" ph="INSERT INTO forum... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/Post_table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

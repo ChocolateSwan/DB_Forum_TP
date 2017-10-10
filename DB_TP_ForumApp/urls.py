@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from application.views import create_forum, details_forum, \
-    createThread
+    create_thread
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^forum/create', create_forum),
     url(r'^forum/(?P<slug>[\w-]+)/details', details_forum),
-    url(r'^forum/(?P<slug>\w+)/create', createThread),
+    url(r'^forum/(?P<slug>[\w-]+)/create', create_thread),
 
 ]

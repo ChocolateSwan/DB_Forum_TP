@@ -2,10 +2,8 @@
 (
     id SERIAL PRIMARY KEY NOT NULL,
     author_id INT NOT NULL,
-    author_nickname CITEXT COLLATE pg_catalog.ucs_basic NOT NULL,
     created TIMESTAMP with time zone DEFAULT now() NOT NULL,
     forum_id INT NOT NULL,
-    forum_slug citext COLLATE pg_catalog.ucs_basic NOT NULL,
     isEdited BOOLEAN DEFAULT FALSE NOT NULL,
     message TEXT NOT NULL,
     parent INT DEFAULT 0,
@@ -22,5 +20,4 @@
       REFERENCES public."User" (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );
-
 

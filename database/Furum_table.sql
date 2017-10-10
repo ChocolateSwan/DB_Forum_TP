@@ -1,4 +1,4 @@
-﻿CREATE TABLE Forum
+﻿CREATE TABLE "Forum"
 (
     id SERIAL PRIMARY KEY NOT NULL,
     posts INT NOT NULL DEFAULT 0,
@@ -6,11 +6,9 @@
     threads INT NOT NULL DEFAULT 0,
     title VARCHAR(100) NOT NULL,
     user_id INT NOT NULL,
-    user_nickname CITEXT COLLATE pg_catalog.ucs_basic,
    
   CONSTRAINT Forum_user_id_fk FOREIGN KEY (user_id)
-      REFERENCES public."User" (id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION
+   REFERENCES public."User" (id) MATCH SIMPLE
+   ON UPDATE NO ACTION ON DELETE NO ACTION
     
 );
-
