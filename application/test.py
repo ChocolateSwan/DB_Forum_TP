@@ -71,6 +71,7 @@ T.stop('connect 2')
 
 print T.get_list()
 
+c = pool.putconn
 
 try:
     T.start('connect 3')
@@ -94,3 +95,6 @@ cursor = conn.cursor()
 cursor.execute(qq)
 res = cursor.fetchall()
 print (res)
+
+
+# cursor_factory=psycopg2.extras.DictCursor

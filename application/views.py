@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from contextlib import contextmanager
+from psycopg2.pool import ThreadedConnectionPool
+
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.http import HttpResponse
@@ -11,7 +14,27 @@ import sys
 from utils import return_cursor, select_user_id,\
     select_forum_id, user_make_json
 
-print ("1212")
+#=========================================
+try:
+    pool = ThreadedConnectionPool(2, 10, 'host=127.0.0.1 user=olyasur dbname=ForumTP password=Arielariel111')
+except:
+    print "Oops ThreadedConnectionPool"
+
+@contextmanager
+def get_cursor():
+    print ("open")
+    connection = pool.getconn()
+    cur = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    try:
+        yield cur, connection
+        # con.commit()
+    finally:
+        print ("close")
+        cur.close()
+        pool.putconn(connection)
+
+#=========================================
+
 
 
 def create_forum(request):
@@ -119,58 +142,62 @@ def create_thread(request, slug):
 #   "email": "captaina@blackpearl.sea",
 #   "fullname": "Captain Jack Sparrow"
 def create_user(request, nickname):
-    cursor, connection = return_cursor()
-    data = json.loads(request.body.decode('utf-8'))
-    req_insert_user = "INSERT INTO \"User\" (about, email, fullname, nickname) VALUES ('{}', '{}', '{}', '{}');" \
-        .format(data['about'], data['email'], data['fullname'],nickname )
-    try:
-        cursor.execute(req_insert_user)
-        connection.commit()
-    except psycopg2.Error as err:
-        connection.rollback()
-        users = []
-        user = None
-        if "user_email_unique" in err.message:
-            req_select_user = " SELECT about, email, fullname, nickname FROM \"User\" where email = '{}';"\
-                .format(data['email'])
-            cursor.execute(req_select_user)
-            user = cursor.fetchone()
-            if user is not None:
-                users.append(user_make_json(user))
-        if "user_nickname_unique":
-            req_select_user = " SELECT about, email, fullname, nickname FROM \"User\" where nickname = '{}';" \
+    with get_cursor() as (cursor, connection):
+        data = json.loads(request.body.decode('utf-8'))
+        req_insert_user = "INSERT INTO \"User\" (about, email, fullname, nickname) VALUES ('{}', '{}', '{}', '{}');" \
+            .format(data['about'], data['email'], data['fullname'], nickname)
+        try:
+            cursor.execute(req_insert_user)
+            connection.commit()
+        except psycopg2.Error as err:
+            connection.rollback()
+            if "unique" in err.message:
+                req_select_user = " SELECT about, email, fullname, nickname FROM \"User\" where email = '{}' or nickname = '{}';"\
+                    .format(data['email'],nickname)
+                cursor.execute(req_select_user)
+                users = cursor.fetchall()
+            return JsonResponse(map(lambda x: dict(x), users), safe=False, status=409)
+        return JsonResponse( {'about': data['about'], 'email': data['email'],'fullname': data['fullname'],
+                              'nickname': nickname}, status=201, )
+
+
+def profile_user(request, nickname):
+    with get_cursor() as (cursor, connection):
+        if request.method == "GET":
+            req_select_username = "SELECT about, email, fullname, nickname FROM \"User\" where nickname = '{}';"\
                 .format(nickname)
-            cursor.execute(req_select_user)
-            user = cursor.fetchone()
-            if user is not None:
-                users.append(user_make_json(user))
-        return JsonResponse(users, status=409)
+            try:
+                cursor.execute(req_select_username)
+                user = cursor.fetchone()
+                return JsonResponse(dict(user), status=200)
+            except:
+                return JsonResponse({"message": "Can't user with nickname = {}".\
+                                    format(nickname)}, status=404, )
+        else:
+            data = json.loads(request.body.decode('utf-8'))
+            req_select_username = "SELECT id FROM \"User\" where nickname = '{}';" \
+                .format(nickname)
+            try:
+                cursor.execute(req_select_username)
+                user = cursor.fetchone()
+                if user is None:
+                    return JsonResponse({"message": "Can't user with nickname = {}". \
+                                        format(nickname)}, status=404, )
 
-    return JsonResponse( {'about': data['about'],
-                          'email': data['email'],
-                          'fullname': data['fullname'],
-                          'nickname': nickname}
-                         ,status=201, )
-
-def profile_user(request,nickname):
-    cursor, connection = return_cursor()
-    req_select_username = "SELECT about, email, fullname, nickname FROM \"User\" where nickname = '{}';"\
-        .format(nickname)
-    try:
-        cursor.execute(req_select_username)
-        user = cursor.fetchone()
-        connection.close()
-        return JsonResponse(user_make_json(user), status=200)
-    except:
-        connection.close()
-        return JsonResponse([{1:1}, {2:2}],safe=False,status = 200)
-        # return JsonResponse({"message": "Can't user forum with nickname = {}".\
-        #                     format(nickname)}, status=404, )
-
-
-
-
-
+                else:
+                    req_update_user = "UPDATE \"User\" SET about = '{}', email = '{}', fullname = '{}' where id = '{}'; "\
+                    .format(data['about'], data['email'], data['fullname'], user['id'])
+                    try:
+                        cursor.execute(req_update_user)
+                        connection.commit()
+                    except psycopg2.Error as err:
+                        connection.rollback()
+                        if "unique" in err.message:
+                            return JsonResponse({"message": "Conflict"}, status=409, )
+                    return JsonResponse({'about': data['about'], 'email': data['email'], 'fullname': data['fullname'],
+                                         'nickname': nickname}, status=200, )
+            except:
+                print "oooooooooopppps"
 
 
 
