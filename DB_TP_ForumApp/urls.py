@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from application.views import create_forum, details_forum, \
-    create_thread, create_user, profile_user
+    create_thread, create_user, profile_user, threads_forum
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^forum/(?P<slug>[\w-]+)/create', create_thread),
     url(r'user/(?P<nickname>[.\w-]+)/create', create_user),
     url(r'user/(?P<nickname>[.\w-]+)/profile', profile_user),
+    url(r'forum/(?P<slug>[.\w-]+)/threads', threads_forum),
 
 ]

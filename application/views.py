@@ -59,7 +59,6 @@ def create_forum(request):
                     .format(data['slug'])
                 cursor.execute(req_select_forum)
                 return JsonResponse(dict(cursor.fetchone()),status=409)
-            print ("Cant't insert forum")
         return JsonResponse( {'posts': 0, 'slug': data['slug'], 'threads': 0,
                               'title': data['title'], 'user': data['user']}, status=201, )
 
@@ -86,20 +85,28 @@ def details_forum(request, slug):
 # }
 
 def create_thread(request, slug):
-    cursor, connection = return_cursor()
-    data = json.loads(request.body.decode('utf-8'))
-    user = select_user_id(cursor, data['author'])
-    forum = select_forum_id(cursor, slug)
-    if user is None:
-        return JsonResponse \
-            ({"message": "Can't find user with nickname {}\n".format(data['user'])}, status=404)
-    if forum is None:
-        return JsonResponse \
-            ({"message": "Can't find forum with slug {}\n".format(slug)}, status=404)
-    # Проверили юзера и наличие форума
-    req_insert_thread = "INSERT INTO thread (author_id, forum_id, forum_slug, message, slug, title)\
-        VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}');" \
-        .format(data['slug'], data['title'], user[0], data['user'], )
+    with get_cursor() as (cursor, connection):
+        data = json.loads(request.body.decode('utf-8'))
+        req_insert_forum = "INSERT INTO thread (author_id, created, forum_id, message, slug, title)\
+            VALUES ('{}', '{}',\
+            (SELECT id from \"User\" where nickname = '{}'));" \
+             .format(data['slug'], data['title'], data['user'], )
+
+
+
+
+
+
+    # if user is None:
+    #     return JsonResponse \
+    #         ({"message": "Can't find user with nickname {}\n".format(data['user'])}, status=404)
+    # if forum is None:
+    #     return JsonResponse \
+    #         ({"message": "Can't find forum with slug {}\n".format(slug)}, status=404)
+    # # Проверили юзера и наличие форума
+    # req_insert_thread = "INSERT INTO thread (author_id, forum_id, forum_slug, message, slug, title)\
+    #     VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}');" \
+    #     .format(data['slug'], data['title'], user[0], data['user'], )
     # try:
     #     cursor.execute(req_insert_forum)
     #     connection.commit()
@@ -113,6 +120,11 @@ def create_thread(request, slug):
     #       % (data[u'slug'], data[u'title'], data[u'user'],)
 
     return JsonResponse({1:1},status=201)
+
+
+def threads_forum(request, slug):
+    print request.GET
+    # if request.GET.get('l')
 
 
 
@@ -162,10 +174,13 @@ def profile_user(request, nickname):
                 if user is None:
                     return JsonResponse({"message": "Can't user with nickname = {}". \
                                         format(nickname)}, status=404, )
-
                 else:
-                    req_update_user = "UPDATE \"User\" SET about = '{}', email = '{}', fullname = '{}' where id = '{}'; "\
-                    .format(data['about'], data['email'], data['fullname'], user['id'])
+                    req_update_user = "UPDATE \"User\" SET "
+                    for key in data:
+                        print key
+                        req_update_user += key+" = '" + str(data[key])+"', "
+                    req_update_user = req_update_user[:req_update_user.rfind(',')]
+                    req_update_user += " where id = " + str(user['id'])
                     try:
                         cursor.execute(req_update_user)
                         connection.commit()
@@ -173,10 +188,17 @@ def profile_user(request, nickname):
                         connection.rollback()
                         if "unique" in err.message:
                             return JsonResponse({"message": "Conflict"}, status=409, )
-                    return JsonResponse({'about': data['about'], 'email': data['email'], 'fullname': data['fullname'],
-                                         'nickname': nickname}, status=200, )
+
+                    req_select_user = " SELECT about, email, fullname, nickname FROM \"User\" where nickname = '{}';".format(nickname)
+                    cursor.execute(req_select_user)
+                    return JsonResponse(dict(cursor.fetchone()), status=200, )
             except:
-                print "oooooooooopppps"
+                print "ooooooooooops"
+
+
+
+
+
 
 ########################################
 # User
