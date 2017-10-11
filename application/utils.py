@@ -10,7 +10,7 @@ def return_cursor():
     cursor = connection.cursor()
     return cursor,connection
 
-# Получить id юзера по nickname
+
 def select_user_id(cursor, user_nickname):
     req_select_user = " SELECT id FROM \"User\" where nickname = '{}';" \
         .format(user_nickname)
@@ -23,7 +23,7 @@ def select_user_id(cursor, user_nickname):
     return user
 
 
-# Получить id форума по slug
+
 def select_forum_id(cursor, forum_slug):
     req_select_forum = " SELECT id FROM \"Forum\" where slug = '{}';" \
         .format(forum_slug)
@@ -34,3 +34,13 @@ def select_forum_id(cursor, forum_slug):
     except:
         print ("Can't select forum")
     return forum
+
+def user_make_json(user):
+    return { 'about': user[0],
+            'email': user[1],
+            'fullname': user[2],
+            'nickname': user[3]}
+
+
+
+
