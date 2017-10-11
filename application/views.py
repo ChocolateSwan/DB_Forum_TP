@@ -36,66 +36,45 @@ def get_cursor():
 #=========================================
 
 
-
+########################################
+# Forum
+########################################
 def create_forum(request):
-    cursor, connection = return_cursor()
-    data = json.loads(request.body.decode('utf-8'))
-    user = select_user_id(cursor, data['user'])
-    if user is None:
-        return JsonResponse\
-            ({"message": "Can't find user with nickname {}\n".format(data['user'])}, status=404)
-
-    req_insert_forum = "INSERT INTO \"Forum\" (slug, title, user_id) VALUES ('{}', '{}', '{}');"\
-        .format(data['slug'],data['title'], user[0],)
-    try:
-        cursor.execute(req_insert_forum)
-        connection.commit()
-    except psycopg2.Error as err:
-        connection.rollback()
-        if "forum_slug_unique" in err.message:
-            forum = None
-            req_select_forum = " SELECT posts, threads, title, user_id FROM \"Forum\" where slug = '{}';"\
-                .format(data['slug'])
-            try:
+    with get_cursor() as (cursor, connection):
+        data = json.loads(request.body.decode('utf-8'))
+        req_insert_forum = "INSERT INTO \"Forum\" (slug, title, user_id) VALUES ('{}', '{}',\
+                (SELECT id from \"User\" where nickname = '{}'));" \
+            .format(data['slug'], data['title'], data['user'], )
+        try:
+            cursor.execute(req_insert_forum)
+            connection.commit()
+        except psycopg2.Error as err:
+            connection.rollback()
+            if "user_id" in err.message:
+                return JsonResponse\
+                    ({"message": "Can't find user with nickname {}\n".format(data['user'])}, status=404)
+            if "forum_slug_unique" in err.message:
+                req_select_forum = "SELECT \"Forum\".posts, \"Forum\".slug, \"Forum\".threads,\"Forum\".title, \"User\".nickname as \"user\" \
+                    FROM \"Forum\" INNER JOIN \"User\" ON \"Forum\".user_id = \"User\".id where \"Forum\".slug = '{}';"\
+                    .format(data['slug'])
                 cursor.execute(req_select_forum)
-                forum = cursor.fetchone()
+                return JsonResponse(dict(cursor.fetchone()),status=409)
+            print ("Cant't insert forum")
+        return JsonResponse( {'posts': 0, 'slug': data['slug'], 'threads': 0,
+                              'title': data['title'], 'user': data['user']}, status=201, )
 
-            except psycopg2.Error as err :
-                print err.message
-                print ("Can't select forum")
-            return JsonResponse({"posts": forum[0],
-                                 "slug": data['slug'],
-                                 "threads": forum[1],
-                                 "title": forum[2],
-                                 "user": forum[3]},status=409)
-        print ("Cant't insert forum")
 
-    return JsonResponse( {'posts': 0,
-                          'slug': data['slug'],
-                          'threads': 0,
-                          'title': data['title'],
-                          'user': data['user']},status=201, )
-
-def details_forum (request, slug):
-    cursor, connection = return_cursor()
-    req_select_forum = "SELECT posts, threads, title, user_id FROM \"Forum\" where slug = '{}';"\
-        .format(slug)
-    try:
-        cursor.execute(req_select_forum)
-        forum = cursor.fetchone()
-        req_select_user = "SELECT nickname FROM \"User\" where id = '{}';".format(forum[3])
-        cursor.execute(req_select_user)
-        user = cursor.fetchone()
-        connection.close()
-        return JsonResponse({'posts': forum[0],
-                             'slug': slug,
-                             'threads': forum[1],
-                             'title': forum[2],
-                             'user': user[0]}, status=200, )
-    except:
-        connection.close()
-        return JsonResponse({"message": "Can't find forum with slug = {}".\
-                            format(slug)}, status=404, )
+def details_forum(request, slug):
+    with get_cursor() as (cursor, connection):
+        req_select_forum = "SELECT \"Forum\".posts, \"Forum\".slug, \"Forum\".threads,\"Forum\".title, \"User\".nickname as \"user\" \
+        FROM \"Forum\" INNER JOIN \"User\" ON \"Forum\".user_id = \"User\".id where \"Forum\".slug = '{}';"\
+            .format(slug)
+        try:
+            cursor.execute(req_select_forum)
+            return JsonResponse(dict(cursor.fetchone()), status=200, )
+        except:
+            return JsonResponse({"message": "Can't find forum with slug = {}".\
+                                format(slug)}, status=404, )
 
 
 #
@@ -138,9 +117,9 @@ def create_thread(request, slug):
 
 
 
-#   "about": "This is the day you will always remember as the day that you almost caught Captain Jack Sparrow!",
-#   "email": "captaina@blackpearl.sea",
-#   "fullname": "Captain Jack Sparrow"
+########################################
+# User
+########################################
 def create_user(request, nickname):
     with get_cursor() as (cursor, connection):
         data = json.loads(request.body.decode('utf-8'))
@@ -168,8 +147,8 @@ def profile_user(request, nickname):
                 .format(nickname)
             try:
                 cursor.execute(req_select_username)
-                user = cursor.fetchone()
-                return JsonResponse(dict(user), status=200)
+                # user = cursor.fetchone()
+                return JsonResponse(dict(cursor.fetchone()), status=200)
             except:
                 return JsonResponse({"message": "Can't user with nickname = {}".\
                                     format(nickname)}, status=404, )
@@ -199,7 +178,6 @@ def profile_user(request, nickname):
             except:
                 print "oooooooooopppps"
 
-
-
-
-
+########################################
+# User
+########################################
