@@ -5,7 +5,7 @@
     created TIMESTAMP WITH TIME ZONE DEFAULT now(),
     forum_id INT NOT NULL,
 	message TEXT NOT NULL,
-	slug CITEXT COLLATE pg_catalog.ucs_basic CONSTRAINT Thread_slag_unique UNIQUE,
+	slug CITEXT COLLATE pg_catalog.ucs_basic ,
     title VARCHAR(200) NOT NULL,
    votes INT DEFAULT 0,
  

@@ -20,9 +20,9 @@ from application.views import create_forum, details_forum, \
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^forum/create', create_forum),
-    url(r'^forum/(?P<slug>[\w-]+)/details', details_forum),
-    url(r'^forum/(?P<slug>[\w-]+)/create', create_thread),
+    url(r'forum/create', create_forum),
+    url(r'forum/(?P<slug>[\w-]+)/details', details_forum),
+    url(r'forum/(?P<slug>[\w-]+)/create', create_thread),
     url(r'user/(?P<nickname>[.\w-]+)/create', create_user),
     url(r'user/(?P<nickname>[.\w-]+)/profile', profile_user),
     url(r'forum/(?P<slug>[.\w-]+)/threads', threads_forum),
