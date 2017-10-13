@@ -130,6 +130,15 @@ def create_thread(request, slug):
 
 def threads_forum(request, slug):
     with get_cursor() as (cursor, connection):
+        req_select_forum = "SELECT id from \"Forum\" where slug = '{}'".format(slug)
+        try:
+            cursor.execute(req_select_forum)
+            connection.commit()
+        except psycopg2.Error as err:
+            return JsonResponse({"message": "cant' find"}, status=404, )
+        forum = cursor.fetchone()
+        if forum is None:
+            return JsonResponse({"message": "cant' find"}, status=404, )
         req_select_threads ="SELECT nickname as \"author\", created, f.slug as \"forum\",t.id, message, t.slug, t.title, t.votes  \
         FROM thread t INNER JOIN \"User\" u ON t.author_id = u.id INNER JOIN \"Forum\" f ON t.forum_id = f.id WHERE f.slug = '{}'"\
         .format(slug)
@@ -145,7 +154,6 @@ def threads_forum(request, slug):
         req_select_threads += ';'
 
         try:
-            print req_select_threads
             cursor.execute(req_select_threads)
             connection.commit()
         except psycopg2.Error as err:
