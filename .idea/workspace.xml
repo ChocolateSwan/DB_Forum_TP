@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/application/test.py" description="c = pool.getconn()" line="61" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="56e1e515-b1b4-4f68-9deb-34415b3f0d37" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/test2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/test_decor.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" afterPath="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/utils.py" afterPath="$PROJECT_DIR$/application/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views.py" afterPath="$PROJECT_DIR$/application/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/Thread_table.sql" afterPath="$PROJECT_DIR$/database/Thread_table.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +21,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DB_TP_ForumApp$queryes.coverage" NAME="queryes Coverage Results" MODIFIED="1507646757046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/application" />
     <SUITE FILE_PATH="coverage/DB_TP_ForumApp$test.coverage" NAME="test Coverage Results" MODIFIED="1507712756756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/application" />
-    <SUITE FILE_PATH="coverage/DB_TP_ForumApp$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1507882318453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/application/migrations" />
+    <SUITE FILE_PATH="coverage/DB_TP_ForumApp$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1507898786310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/application/migrations" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -28,106 +31,15 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1045">
+            <state relative-caret-position="946">
               <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="141" column="72" lean-forward="false" selection-start-line="141" selection-start-column="72" selection-end-line="141" selection-end-column="72" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-                <marker date="1507892552571" expanded="true" signature="1396:1507" ph="select posts... t" />
-                <marker date="1507892552571" expanded="true" signature="2009:2233" ph="SELECT \&quot;For... Forum" />
-                <marker date="1507892552571" expanded="true" signature="2222:2233" ph="SELECT posts... Forum" />
-                <marker date="1507892552571" expanded="false" signature="2503:3106" ph="..." />
-                <marker date="1507892552571" expanded="true" signature="2579:2791" ph="SELECT \&quot;For... " />
-                <marker date="1507892552571" expanded="true" signature="2579:2792" ph="SELECT \&quot;For... Forum" />
-                <marker date="1507892552571" expanded="true" signature="2585:2763" ph="select forum... " />
-                <marker date="1507892552571" expanded="true" signature="2585:2790" ph="SELECT posts... Forum" />
-                <marker date="1507892552571" expanded="true" signature="3972:4237" ph="SELECT nickn... t" />
-                <marker date="1507892552571" expanded="true" signature="5013:5151" ph="SELECT u.nic... thread" />
-                <marker date="1507892552571" expanded="true" signature="5013:5237" ph="SELECT u.nic... thread" />
-                <marker date="1507892552571" expanded="true" signature="5013:5238" ph="SELECT \&quot;For... Forum" />
-                <marker date="1507892552571" expanded="true" signature="5013:5266" ph="SELECT u.nic... thread" />
-                <marker date="1507892552571" expanded="true" signature="5013:5271" ph="SELECT u.nic... thread" />
-                <marker date="1507892552571" expanded="true" signature="5013:5304" ph="SELECT u.nic... thread" />
-                <marker date="1507892552571" expanded="true" signature="5013:5305" ph="SELECT u.nic... " />
-                <marker date="1507892552571" expanded="true" signature="5710:5733" ph="SELECT id fr... " />
-                <marker date="1507892552571" expanded="true" signature="5710:5740" ph="SELECT id fr... Forum" />
-                <marker date="1507892552571" expanded="true" signature="5710:5745" ph="SELECT id fr... Forum" />
-                <marker date="1507892552571" expanded="true" signature="5710:5747" ph="SELECT id fr... Forum" />
-                <marker date="1507892552571" expanded="true" signature="5710:5752" ph="SELECT id fr... Forum" />
-                <marker date="1507892552571" expanded="true" signature="6160:6284" ph="SELECT nickn... thread" />
-                <marker date="1507892552571" expanded="true" signature="6160:6389" ph="SELECT nickn... thread" />
-                <marker date="1507892552571" expanded="true" signature="6160:6391" ph="SELECT nickn... thread" />
-                <marker date="1507892552571" expanded="true" signature="6160:6392" ph="SELECT nickn... thread" />
-                <marker date="1507892552571" expanded="true" signature="6160:6394" ph="SELECT nickn... thread" />
-                <marker date="1507892552571" expanded="true" signature="6160:6696" ph="SELECT nickn... thread" />
-                <marker date="1507892552571" expanded="true" signature="7589:7628" ph="INSERT INTO \&quot;User\&quot;... " />
-                <marker date="1507892552571" expanded="true" signature="7589:7676" ph="INSERT INTO \&quot;User\&quot;... " />
-                <marker date="1507892552571" expanded="true" signature="7589:7758" ph="INSERT INTO \&quot;User\&quot;... " />
-                <marker date="1507892552571" expanded="true" signature="7996:8087" ph="SELECT about... User" />
-                <marker date="1507892552571" expanded="true" signature="8651:8726" ph="SELECT posts... Forum" />
-                <marker date="1507892552571" expanded="true" signature="9229:9274" ph="SELECT id FR... User" />
-                <marker date="1507892552571" expanded="true" signature="10403:10478" ph="SELECT about... User" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/test2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-                <marker date="1507717021402" expanded="true" signature="577:647" ph="SELECT about... User" />
-                <marker date="1507717021402" expanded="true" signature="577:658" ph="SELECT about... User" />
-                <marker date="1507717021402" expanded="true" signature="577:661" ph="SELECT about... User" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="99" column="2" lean-forward="false" selection-start-line="99" selection-start-column="2" selection-end-line="99" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1507715586066" expanded="true" signature="366:431" ph="INSERT INTO \&quot;User\&quot;... " />
-                <marker date="1507715586066" expanded="true" signature="480:528" ph="SELECT * FRO... User" />
-                <marker date="1507715586066" expanded="true" signature="480:529" ph="SELECT * FRO... User" />
-                <marker date="1507715586066" expanded="true" signature="480:531" ph="SELECT * FRO... User" />
-                <marker date="1507715586066" expanded="true" signature="2099:2118" ph="select {0} f... " />
-                <marker date="1507715586066" expanded="true" signature="2265:2305" ph="select nickn... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-              <folding>
-                <element signature="e#648#680#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Post_table.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/Post_table.sql">
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/tests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -136,13 +48,85 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_decor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/test_decor.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="140">
+              <caret line="332" column="42" lean-forward="false" selection-start-line="331" selection-start-column="32" selection-end-line="332" selection-end-column="42" />
               <folding>
-                <element signature="e#1#38#0" expanded="true" />
+                <element signature="e#24#63#0" expanded="true" />
+                <marker date="1507973696446" expanded="true" signature="981:1092" ph="select posts... t" />
+                <marker date="1507973696446" expanded="true" signature="1594:1818" ph="SELECT \&quot;For... Forum" />
+                <marker date="1507973696446" expanded="true" signature="1807:1818" ph="SELECT posts... Forum" />
+                <marker date="1507973696446" expanded="false" signature="2088:2691" ph="..." />
+                <marker date="1507973696446" expanded="true" signature="2164:2376" ph="SELECT \&quot;For... " />
+                <marker date="1507973696446" expanded="true" signature="2164:2377" ph="SELECT \&quot;For... Forum" />
+                <marker date="1507973696446" expanded="true" signature="2170:2348" ph="select forum... " />
+                <marker date="1507973696446" expanded="true" signature="2170:2375" ph="SELECT posts... Forum" />
+                <marker date="1507973696446" expanded="true" signature="3557:3822" ph="SELECT nickn... t" />
+                <marker date="1507973696446" expanded="true" signature="4598:4736" ph="SELECT u.nic... thread" />
+                <marker date="1507973696446" expanded="true" signature="4598:4822" ph="SELECT u.nic... thread" />
+                <marker date="1507973696446" expanded="true" signature="4598:4823" ph="SELECT \&quot;For... Forum" />
+                <marker date="1507973696446" expanded="true" signature="4598:4851" ph="SELECT u.nic... thread" />
+                <marker date="1507973696446" expanded="true" signature="4598:4856" ph="SELECT u.nic... thread" />
+                <marker date="1507973696446" expanded="true" signature="4598:4889" ph="SELECT u.nic... thread" />
+                <marker date="1507973696446" expanded="true" signature="4598:4890" ph="SELECT u.nic... " />
+                <marker date="1507973696446" expanded="true" signature="5295:5318" ph="SELECT id fr... " />
+                <marker date="1507973696446" expanded="true" signature="5295:5325" ph="SELECT id fr... Forum" />
+                <marker date="1507973696446" expanded="true" signature="5295:5330" ph="SELECT id fr... Forum" />
+                <marker date="1507973696446" expanded="true" signature="5295:5332" ph="SELECT id fr... Forum" />
+                <marker date="1507973696446" expanded="true" signature="5295:5337" ph="SELECT id fr... Forum" />
+                <marker date="1507973696446" expanded="true" signature="5715:5839" ph="SELECT nickn... thread" />
+                <marker date="1507973696446" expanded="true" signature="5715:5944" ph="SELECT nickn... thread" />
+                <marker date="1507973696446" expanded="true" signature="5715:5946" ph="SELECT nickn... thread" />
+                <marker date="1507973696446" expanded="true" signature="5715:5947" ph="SELECT nickn... thread" />
+                <marker date="1507973696446" expanded="true" signature="5715:5949" ph="SELECT nickn... thread" />
+                <marker date="1507973696446" expanded="true" signature="5715:6251" ph="SELECT nickn... thread" />
+                <marker date="1507973696446" expanded="true" signature="7238:7308" ph="INSERT INTO \&quot;User\&quot;... " />
+                <marker date="1507973696446" expanded="true" signature="7238:7387" ph="INSERT INTO \&quot;User\&quot;... " />
+                <marker date="1507973696446" expanded="true" signature="7238:7528" ph="INSERT INTO \&quot;User\&quot;... " />
+                <marker date="1507973696446" expanded="true" signature="7765:7934" ph="SELECT about... User" />
+                <marker date="1507973696446" expanded="true" signature="8818:8971" ph="SELECT posts... Forum" />
+                <marker date="1507973696446" expanded="true" signature="9527:9650" ph="SELECT id FR... User" />
+                <marker date="1507973696446" expanded="true" signature="10909:11070" ph="SELECT about... User" />
+                <marker date="1507973696446" expanded="true" signature="11913:11952" ph="SELECT id fr... thread" />
+                <marker date="1507973696446" expanded="true" signature="12171:12241" ph="INSERT INTO posts... " />
+                <marker date="1507973696446" expanded="true" signature="12788:12967" ph="select id, u... " />
+                <marker date="1507973696446" expanded="true" signature="12788:13061" ph="select t.id,... t" />
+                <marker date="1507973696446" expanded="true" signature="13867:13879" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="13867:13883" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="13913:13925" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="13913:13929" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="13913:13977" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="13958:13976" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="14006:14027" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="14057:14076" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="14057:14077" ph="DELETE FROM " />
+                <marker date="1507973696446" expanded="true" signature="14497:14573" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14581" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14649" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14656" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14659" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14733" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14788" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14801" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14808" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14497:14810" ph="SELECT (SELE... " />
+                <marker date="1507973696446" expanded="true" signature="14538:14569" ph="SELECT count... Forum" />
+                <marker date="1507973696446" expanded="true" signature="14618:14645" ph="SELECT count... post" />
+                <marker date="1507973696446" expanded="true" signature="14693:14721" ph="SELECT count... thread" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="41" />
+              <folding>
+                <element signature="e#648#680#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,15 +144,42 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/apps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="32" />
-              <folding>
-                <marker date="1507641253680" expanded="true" signature="348:393" ph="SELECT id FR... User" />
-                <marker date="1507641253680" expanded="true" signature="660:702" ph="SELECT id FR... Forum" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,6 +193,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>map</find>
+      <find>in</find>
+      <find>ind</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -189,13 +207,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/DB_TP_ForumApp/settings.py" />
-        <option value="$PROJECT_DIR$/application/utils.py" />
         <option value="$PROJECT_DIR$/application/queryes.py" />
         <option value="$PROJECT_DIR$/application/migrations/test2.py" />
         <option value="$PROJECT_DIR$/application/migrations/test_decor.py" />
         <option value="$PROJECT_DIR$/application/test.py" />
         <option value="$PROJECT_DIR$/application/test2.py" />
         <option value="$PROJECT_DIR$/database/Thread_table.sql" />
+        <option value="$PROJECT_DIR$/application/utils.py" />
         <option value="$PROJECT_DIR$/DB_TP_ForumApp/urls.py" />
         <option value="$PROJECT_DIR$/application/views.py" />
       </list>
@@ -246,11 +264,6 @@
               <item name="DB_TP_ForumApp" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_TP_ForumApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_TP_ForumApp" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DB_TP_ForumApp" type="b2602c69:ProjectViewProjectNode" />
@@ -402,7 +415,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41361257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20732984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25537783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -464,10 +477,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <marker date="1507641253680" expanded="true" signature="348:393" ph="SELECT id FR... User" />
-            <marker date="1507641253680" expanded="true" signature="660:702" ph="SELECT id FR... Forum" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -485,40 +495,66 @@
           <caret line="97" column="40" lean-forward="true" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <marker date="1507892552571" expanded="true" signature="1396:1507" ph="select posts... t" />
-            <marker date="1507892552571" expanded="true" signature="2009:2233" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="2222:2233" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="false" signature="2503:3106" ph="..." />
-            <marker date="1507892552571" expanded="true" signature="2579:2791" ph="SELECT \&quot;For... " />
-            <marker date="1507892552571" expanded="true" signature="2579:2792" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="2585:2763" ph="select forum... " />
-            <marker date="1507892552571" expanded="true" signature="2585:2790" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="true" signature="3972:4237" ph="SELECT nickn... t" />
-            <marker date="1507892552571" expanded="true" signature="5013:5151" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5237" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5238" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5013:5266" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5271" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5304" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5305" ph="SELECT u.nic... " />
-            <marker date="1507892552571" expanded="true" signature="5710:5733" ph="SELECT id fr... " />
-            <marker date="1507892552571" expanded="true" signature="5710:5740" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5745" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5747" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5752" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="6160:6284" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6389" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6391" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6392" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6394" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6696" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="7589:7628" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7589:7676" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7589:7758" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7996:8087" ph="SELECT about... User" />
-            <marker date="1507892552571" expanded="true" signature="8651:8726" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="true" signature="9229:9274" ph="SELECT id FR... User" />
-            <marker date="1507892552571" expanded="true" signature="10403:10478" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="981:1092" ph="select posts... t" />
+            <marker date="1507973696446" expanded="true" signature="1594:1818" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="1807:1818" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="false" signature="2088:2691" ph="..." />
+            <marker date="1507973696446" expanded="true" signature="2164:2376" ph="SELECT \&quot;For... " />
+            <marker date="1507973696446" expanded="true" signature="2164:2377" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="2170:2348" ph="select forum... " />
+            <marker date="1507973696446" expanded="true" signature="2170:2375" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="true" signature="3557:3822" ph="SELECT nickn... t" />
+            <marker date="1507973696446" expanded="true" signature="4598:4736" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4822" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4823" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="4598:4851" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4856" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4889" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4890" ph="SELECT u.nic... " />
+            <marker date="1507973696446" expanded="true" signature="5295:5318" ph="SELECT id fr... " />
+            <marker date="1507973696446" expanded="true" signature="5295:5325" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5330" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5332" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5337" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5715:5839" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5944" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5946" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5947" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5949" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:6251" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="7238:7308" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7238:7387" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7238:7528" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7765:7934" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="8818:8971" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="true" signature="9527:9650" ph="SELECT id FR... User" />
+            <marker date="1507973696446" expanded="true" signature="10909:11070" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="11913:11952" ph="SELECT id fr... thread" />
+            <marker date="1507973696446" expanded="true" signature="12171:12241" ph="INSERT INTO posts... " />
+            <marker date="1507973696446" expanded="true" signature="12788:12967" ph="select id, u... " />
+            <marker date="1507973696446" expanded="true" signature="12788:13061" ph="select t.id,... t" />
+            <marker date="1507973696446" expanded="true" signature="13867:13879" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13867:13883" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13925" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13929" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13977" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13958:13976" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14006:14027" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14057:14076" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14057:14077" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14497:14573" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14581" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14649" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14656" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14659" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14733" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14788" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14801" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14808" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14810" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14538:14569" ph="SELECT count... Forum" />
+            <marker date="1507973696446" expanded="true" signature="14618:14645" ph="SELECT count... post" />
+            <marker date="1507973696446" expanded="true" signature="14693:14721" ph="SELECT count... thread" />
           </folding>
         </state>
       </provider>
@@ -555,40 +591,66 @@
           <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <marker date="1507892552571" expanded="true" signature="1396:1507" ph="select posts... t" />
-            <marker date="1507892552571" expanded="true" signature="2009:2233" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="2222:2233" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="false" signature="2503:3106" ph="..." />
-            <marker date="1507892552571" expanded="true" signature="2579:2791" ph="SELECT \&quot;For... " />
-            <marker date="1507892552571" expanded="true" signature="2579:2792" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="2585:2763" ph="select forum... " />
-            <marker date="1507892552571" expanded="true" signature="2585:2790" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="true" signature="3972:4237" ph="SELECT nickn... t" />
-            <marker date="1507892552571" expanded="true" signature="5013:5151" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5237" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5238" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5013:5266" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5271" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5304" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5305" ph="SELECT u.nic... " />
-            <marker date="1507892552571" expanded="true" signature="5710:5733" ph="SELECT id fr... " />
-            <marker date="1507892552571" expanded="true" signature="5710:5740" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5745" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5747" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5752" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="6160:6284" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6389" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6391" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6392" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6394" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6696" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="7589:7628" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7589:7676" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7589:7758" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7996:8087" ph="SELECT about... User" />
-            <marker date="1507892552571" expanded="true" signature="8651:8726" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="true" signature="9229:9274" ph="SELECT id FR... User" />
-            <marker date="1507892552571" expanded="true" signature="10403:10478" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="981:1092" ph="select posts... t" />
+            <marker date="1507973696446" expanded="true" signature="1594:1818" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="1807:1818" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="false" signature="2088:2691" ph="..." />
+            <marker date="1507973696446" expanded="true" signature="2164:2376" ph="SELECT \&quot;For... " />
+            <marker date="1507973696446" expanded="true" signature="2164:2377" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="2170:2348" ph="select forum... " />
+            <marker date="1507973696446" expanded="true" signature="2170:2375" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="true" signature="3557:3822" ph="SELECT nickn... t" />
+            <marker date="1507973696446" expanded="true" signature="4598:4736" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4822" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4823" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="4598:4851" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4856" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4889" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4890" ph="SELECT u.nic... " />
+            <marker date="1507973696446" expanded="true" signature="5295:5318" ph="SELECT id fr... " />
+            <marker date="1507973696446" expanded="true" signature="5295:5325" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5330" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5332" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5337" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5715:5839" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5944" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5946" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5947" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5949" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:6251" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="7238:7308" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7238:7387" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7238:7528" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7765:7934" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="8818:8971" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="true" signature="9527:9650" ph="SELECT id FR... User" />
+            <marker date="1507973696446" expanded="true" signature="10909:11070" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="11913:11952" ph="SELECT id fr... thread" />
+            <marker date="1507973696446" expanded="true" signature="12171:12241" ph="INSERT INTO posts... " />
+            <marker date="1507973696446" expanded="true" signature="12788:12967" ph="select id, u... " />
+            <marker date="1507973696446" expanded="true" signature="12788:13061" ph="select t.id,... t" />
+            <marker date="1507973696446" expanded="true" signature="13867:13879" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13867:13883" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13925" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13929" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13977" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13958:13976" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14006:14027" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14057:14076" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14057:14077" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14497:14573" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14581" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14649" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14656" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14659" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14733" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14788" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14801" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14808" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14810" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14538:14569" ph="SELECT count... Forum" />
+            <marker date="1507973696446" expanded="true" signature="14618:14645" ph="SELECT count... post" />
+            <marker date="1507973696446" expanded="true" signature="14693:14721" ph="SELECT count... thread" />
           </folding>
         </state>
       </provider>
@@ -610,31 +672,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/queryes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <marker date="1507641253680" expanded="true" signature="348:393" ph="SELECT id FR... User" />
-            <marker date="1507641253680" expanded="true" signature="660:702" ph="SELECT id FR... Forum" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/settings.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/test_decor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/User_table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -647,73 +712,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/test_decor.py">
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/http/request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="e#1#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="99" column="2" lean-forward="false" selection-start-line="99" selection-start-column="2" selection-end-line="99" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1507715586066" expanded="true" signature="366:431" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507715586066" expanded="true" signature="480:528" ph="SELECT * FRO... User" />
-            <marker date="1507715586066" expanded="true" signature="480:529" ph="SELECT * FRO... User" />
-            <marker date="1507715586066" expanded="true" signature="480:531" ph="SELECT * FRO... User" />
-            <marker date="1507715586066" expanded="true" signature="2099:2118" ph="select {0} f... " />
-            <marker date="1507715586066" expanded="true" signature="2265:2305" ph="select nickn... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <marker date="1507717021402" expanded="true" signature="577:647" ph="SELECT about... User" />
-            <marker date="1507717021402" expanded="true" signature="577:658" ph="SELECT about... User" />
-            <marker date="1507717021402" expanded="true" signature="577:661" ph="SELECT about... User" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/User_table.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="-15">
+          <caret line="260" column="8" lean-forward="false" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/Thread_table.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        <state relative-caret-position="304">
+          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="99" column="2" lean-forward="false" selection-start-line="99" selection-start-column="2" selection-end-line="99" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/queryes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="589">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="41" />
           <folding>
             <element signature="e#648#680#0" expanded="true" />
           </folding>
@@ -722,44 +806,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="141" column="72" lean-forward="false" selection-start-line="141" selection-start-column="72" selection-end-line="141" selection-end-column="72" />
+        <state relative-caret-position="140">
+          <caret line="332" column="42" lean-forward="false" selection-start-line="331" selection-start-column="32" selection-end-line="332" selection-end-column="42" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <marker date="1507892552571" expanded="true" signature="1396:1507" ph="select posts... t" />
-            <marker date="1507892552571" expanded="true" signature="2009:2233" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="2222:2233" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="false" signature="2503:3106" ph="..." />
-            <marker date="1507892552571" expanded="true" signature="2579:2791" ph="SELECT \&quot;For... " />
-            <marker date="1507892552571" expanded="true" signature="2579:2792" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="2585:2763" ph="select forum... " />
-            <marker date="1507892552571" expanded="true" signature="2585:2790" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="true" signature="3972:4237" ph="SELECT nickn... t" />
-            <marker date="1507892552571" expanded="true" signature="5013:5151" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5237" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5238" ph="SELECT \&quot;For... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5013:5266" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5271" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5304" ph="SELECT u.nic... thread" />
-            <marker date="1507892552571" expanded="true" signature="5013:5305" ph="SELECT u.nic... " />
-            <marker date="1507892552571" expanded="true" signature="5710:5733" ph="SELECT id fr... " />
-            <marker date="1507892552571" expanded="true" signature="5710:5740" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5745" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5747" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="5710:5752" ph="SELECT id fr... Forum" />
-            <marker date="1507892552571" expanded="true" signature="6160:6284" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6389" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6391" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6392" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6394" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="6160:6696" ph="SELECT nickn... thread" />
-            <marker date="1507892552571" expanded="true" signature="7589:7628" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7589:7676" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7589:7758" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1507892552571" expanded="true" signature="7996:8087" ph="SELECT about... User" />
-            <marker date="1507892552571" expanded="true" signature="8651:8726" ph="SELECT posts... Forum" />
-            <marker date="1507892552571" expanded="true" signature="9229:9274" ph="SELECT id FR... User" />
-            <marker date="1507892552571" expanded="true" signature="10403:10478" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="981:1092" ph="select posts... t" />
+            <marker date="1507973696446" expanded="true" signature="1594:1818" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="1807:1818" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="false" signature="2088:2691" ph="..." />
+            <marker date="1507973696446" expanded="true" signature="2164:2376" ph="SELECT \&quot;For... " />
+            <marker date="1507973696446" expanded="true" signature="2164:2377" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="2170:2348" ph="select forum... " />
+            <marker date="1507973696446" expanded="true" signature="2170:2375" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="true" signature="3557:3822" ph="SELECT nickn... t" />
+            <marker date="1507973696446" expanded="true" signature="4598:4736" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4822" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4823" ph="SELECT \&quot;For... Forum" />
+            <marker date="1507973696446" expanded="true" signature="4598:4851" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4856" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4889" ph="SELECT u.nic... thread" />
+            <marker date="1507973696446" expanded="true" signature="4598:4890" ph="SELECT u.nic... " />
+            <marker date="1507973696446" expanded="true" signature="5295:5318" ph="SELECT id fr... " />
+            <marker date="1507973696446" expanded="true" signature="5295:5325" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5330" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5332" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5295:5337" ph="SELECT id fr... Forum" />
+            <marker date="1507973696446" expanded="true" signature="5715:5839" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5944" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5946" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5947" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:5949" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="5715:6251" ph="SELECT nickn... thread" />
+            <marker date="1507973696446" expanded="true" signature="7238:7308" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7238:7387" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7238:7528" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1507973696446" expanded="true" signature="7765:7934" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="8818:8971" ph="SELECT posts... Forum" />
+            <marker date="1507973696446" expanded="true" signature="9527:9650" ph="SELECT id FR... User" />
+            <marker date="1507973696446" expanded="true" signature="10909:11070" ph="SELECT about... User" />
+            <marker date="1507973696446" expanded="true" signature="11913:11952" ph="SELECT id fr... thread" />
+            <marker date="1507973696446" expanded="true" signature="12171:12241" ph="INSERT INTO posts... " />
+            <marker date="1507973696446" expanded="true" signature="12788:12967" ph="select id, u... " />
+            <marker date="1507973696446" expanded="true" signature="12788:13061" ph="select t.id,... t" />
+            <marker date="1507973696446" expanded="true" signature="13867:13879" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13867:13883" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13925" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13929" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13913:13977" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="13958:13976" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14006:14027" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14057:14076" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14057:14077" ph="DELETE FROM " />
+            <marker date="1507973696446" expanded="true" signature="14497:14573" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14581" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14649" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14656" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14659" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14733" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14788" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14801" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14808" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14497:14810" ph="SELECT (SELE... " />
+            <marker date="1507973696446" expanded="true" signature="14538:14569" ph="SELECT count... Forum" />
+            <marker date="1507973696446" expanded="true" signature="14618:14645" ph="SELECT count... post" />
+            <marker date="1507973696446" expanded="true" signature="14693:14721" ph="SELECT count... thread" />
           </folding>
         </state>
       </provider>

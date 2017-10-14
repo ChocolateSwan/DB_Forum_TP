@@ -15,4 +15,5 @@
   CONSTRAINT Thread_User_id_fk FOREIGN KEY (author_id)
       REFERENCES public."User" (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
+      CONSTRAINT thread_slug_unique UNIQUE (slug)
 );

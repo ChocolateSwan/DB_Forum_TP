@@ -1,39 +1,27 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from contextlib import contextmanager
-from psycopg2.pool import ThreadedConnectionPool
-
-from django.shortcuts import render
 from django.http import JsonResponse
-from django.http import HttpResponse
 import psycopg2
 import psycopg2.extras
 import json
-import sys
-from utils import return_cursor, select_user_id,\
-    select_forum_id, user_make_json
+from utils import init_connection_pool
 
-#=========================================
-try:
-    pool = ThreadedConnectionPool(2, 10, 'host=127.0.0.1 user=olyasur dbname=ForumTP password=Arielariel111')
-except:
-    print "Oops ThreadedConnectionPool"
+
+# Get connection pool
+pool = init_connection_pool()
+
 
 @contextmanager
 def get_cursor():
-    print ("open")
     connection = pool.getconn()
+    # Make dictionary cursor
     cur = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
     try:
         yield cur, connection
-        # con.commit()
     finally:
-        print ("close")
         cur.close()
         pool.putconn(connection)
-
-#=========================================
 
 
 ########################################
@@ -153,6 +141,7 @@ def threads_forum(request, slug):
             req_select_threads += " LIMIT {} ".format(int(request.GET['limit']))
         req_select_threads += ';'
 
+
         try:
             cursor.execute(req_select_threads)
             connection.commit()
@@ -162,63 +151,79 @@ def threads_forum(request, slug):
         return JsonResponse(map(lambda x: dict(x), cursor.fetchall()), safe = False, status=200, )
 
 
-
-
-
-
-
-
-
-
-
-
-
 ########################################
-# User
+# User (begin)
 ########################################
+
+
+# Response: "about", "email" , "fullname"
+# Request: "about", "email", "fullname", "nickname"
 def create_user(request, nickname):
     with get_cursor() as (cursor, connection):
         data = json.loads(request.body.decode('utf-8'))
-        req_insert_user = "INSERT INTO \"User\" (about, email, fullname, nickname) VALUES ('{}', '{}', '{}', '{}');" \
-            .format(data['about'], data['email'], data['fullname'], nickname)
+        req_insert_user = "INSERT INTO \"User\" " \
+                          "(about, email, fullname, nickname) " \
+                          "VALUES ('{}', '{}', '{}', '{}');"\
+            .format(data['about'],
+                    data['email'],
+                    data['fullname'],
+                    nickname)
         try:
             cursor.execute(req_insert_user)
             connection.commit()
         except psycopg2.Error as err:
             connection.rollback()
             if "unique" in err.message:
-                req_select_user = " SELECT about, email, fullname, nickname FROM \"User\" where email = '{}' or nickname = '{}';"\
-                    .format(data['email'],nickname)
+                req_select_user = "SELECT about, email, fullname, nickname " \
+                                  "FROM \"User\" " \
+                                  "where email = '{}' or nickname = '{}';"\
+                    .format(data['email'],
+                            nickname)
                 cursor.execute(req_select_user)
                 users = cursor.fetchall()
-            return JsonResponse(map(lambda x: dict(x), users), safe=False, status=409)
-        return JsonResponse( {'about': data['about'], 'email': data['email'],'fullname': data['fullname'],
-                              'nickname': nickname}, status=201, )
+            return JsonResponse(map(lambda x: dict(x), users),
+                                safe=False,
+                                status=409)
+        # TODO write RETURNING in req_insert_user
+        return JsonResponse({'about': data['about'],
+                             'email': data['email'],
+                             'fullname': data['fullname'],
+                             'nickname': nickname}, status=201, )
 
 
+# request: "about", "email", "fullname"
+# response: "about", "email": "captaina@blackpearl.sea", "fullname", "nickname"
 def profile_user(request, nickname):
     with get_cursor() as (cursor, connection):
         if request.method == "GET":
-            req_select_username = "SELECT about, email, fullname, nickname FROM \"User\" where nickname = '{}';"\
+            req_select_username = "SELECT about, email, fullname, nickname " \
+                                  "FROM \"User\" " \
+                                  "WHERE nickname = '{}';"\
                 .format(nickname)
             try:
                 cursor.execute(req_select_username)
-                # user = cursor.fetchone()
-                return JsonResponse(dict(cursor.fetchone()), status=200)
+                return JsonResponse(dict(cursor.fetchone()),
+                                    status=200, )
             except:
-                return JsonResponse({"message": "Can't user with nickname = {}".\
-                                    format(nickname)}, status=404, )
+                return JsonResponse({"message":  "Can't user with nickname = {}".
+                                    format(nickname)},
+                                    status=404, )
+        # Method POST
         else:
             data = json.loads(request.body.decode('utf-8'))
-            req_select_username = "SELECT id FROM \"User\" where nickname = '{}';" \
+            req_select_username = "SELECT id " \
+                                  "FROM \"User\" " \
+                                  "WHERE nickname = '{}';" \
                 .format(nickname)
             try:
                 cursor.execute(req_select_username)
                 user = cursor.fetchone()
                 if user is None:
                     return JsonResponse({"message": "Can't user with nickname = {}". \
-                                        format(nickname)}, status=404, )
+                                        format(nickname)},
+                                        status=404, )
                 else:
+                    # Generate UPDATE User
                     req_update_user = "UPDATE \"User\" SET "
                     for key in data:
                         print key
@@ -231,14 +236,124 @@ def profile_user(request, nickname):
                     except psycopg2.Error as err:
                         connection.rollback()
                         if "unique" in err.message:
-                            return JsonResponse({"message": "Conflict"}, status=409, )
-
-                    req_select_user = " SELECT about, email, fullname, nickname FROM \"User\" where nickname = '{}';".format(nickname)
+                            return JsonResponse({"message": "Conflict"},
+                                                status=409, )
+                    req_select_user = " SELECT about, email, fullname, nickname " \
+                                      "FROM \"User\" " \
+                                      "WHERE nickname = '{}';".\
+                        format(nickname)
                     cursor.execute(req_select_user)
-                    return JsonResponse(dict(cursor.fetchone()), status=200, )
+                    return JsonResponse(dict(cursor.fetchone()),
+                                        status=200, )
             except:
-                print "ooooooooooops"
+                print "It is FAIL"
+
 
 ########################################
-# User
+# User (end)
+########################################
+
+
+# [
+#   {
+#     "author": "j.sparrow",
+#     "message": "We should be afraid of the Kraken.",
+#     "parent": 0
+#   }
+# ]
+
+########################################
+# Post
+########################################
+def create_post(request, slug_or_id):
+    with get_cursor() as (cursor, connection):
+        data = json.loads(request.body)
+        id_thread = None
+        if slug_or_id.isdigit():
+            id_thread = slug_or_id
+        else:
+            cursor.execute("SELECT id from thread WHERE slug = '{}'".format(slug_or_id))
+            id_thread = cursor.fetchone()['id']
+            if id_thread == None:
+                return JsonResponse({"message": "No thread"}, status=404, )
+        req_insert_posts = "WITH t as (INSERT INTO post (author_id, created, message,parent,thread_id) VALUES "
+        for post in list(data):
+            req_insert_posts += " ((SELECT id FROM \"User\" WHERE nickname = '{}'), now(), '{}',{},{}),"\
+                .format(post['author'],
+                        post['message'],
+                        0 if post.get('parent') is None else int(post.get('parent')),
+                        id_thread)
+
+        req_insert_posts = req_insert_posts[:req_insert_posts.rfind(',')]
+        req_insert_posts += " RETURNING id, author_id, created,isedited, message,parent,thread_id)"
+        req_insert_posts += "select t.id, u.nickname as \"author\", t.created,f.slug as \"forum\", t.isedited, t.message, t.parent,thread_id\
+ as \"thread\" from t  INNER JOIN \"User\" u ON t.author_id = u.id inner join thread on thread.id = t.thread_id inner join \"Forum\" f on thread.forum_id = f.id;"
+
+        print req_insert_posts
+        try:
+            cursor.execute(req_insert_posts)
+            result = map(lambda x: dict(x), cursor.fetchall())
+            print result
+            # user = cursor.fetchone()
+            return JsonResponse(result, safe=False, status=201)
+        except psycopg2.Error as err:
+            print err.message
+            pass
+
+
+
+        return JsonResponse({1:1}, status=200)
+
+
+
+
+
+########################################
+# Post (end)
+########################################
+
+
+########################################
+# Service Information (begin)
+########################################
+
+# request: no parameters
+# response: "forum", "post", "thread", "user"
+def clear_service(request):
+    with get_cursor() as (cursor, connection):
+        req_delete_all = "DELETE FROM Vote; \
+                          DELETE FROM post;\
+                          DELETE FROM thread; \
+                          DELETE FROM \"Forum\"; \
+                          DELETE FROM \"User\""
+        try:
+            cursor.execute(req_delete_all)
+            cursor.commit()
+            return JsonResponse({},
+                                status=200)
+        except:
+            print ("I cant delete all information from db")
+
+
+# request: no parameters
+# response: "forum", "post", "thread", "user"
+def status_service(request):
+    with get_cursor() as (cursor, connection):
+        req_get_statistic = "SELECT " \
+                            "(SELECT count(id) FROM \"Forum\") AS \"forum\"," \
+                            "(SELECT count (id) FROM post) AS \"post\"," \
+                            "(SELECT count(id) FROM thread) AS thread," \
+                            "(SELECT count(id) FROM \"User\") AS \"user\";"
+
+        try:
+            cursor.execute(req_get_statistic)
+
+            return JsonResponse(dict(cursor.fetchone()),
+                                status=200)
+        except:
+            print ("I cant get statistics information")
+
+
+########################################
+# Service Information (end)
 ########################################
