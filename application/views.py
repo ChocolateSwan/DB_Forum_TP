@@ -25,71 +25,97 @@ def get_cursor():
 
 
 ########################################
-# Forum
+# Forum (begin)
 ########################################
+
+# request: "slug", "title": "Pirate stories", "user"
+# response:  "posts", "slug", "threads", "title", "user"
 def create_forum(request):
     with get_cursor() as (cursor, connection):
         data = json.loads(request.body.decode('utf-8'))
-        req_insert_forum = "WITH t as (INSERT INTO \"Forum\" (slug, title, user_id) VALUES ('{}', '{}', (SELECT id from \"User\" where nickname = '{}')) RETURNING posts, slug, threads, title, user_id )\
-select posts, slug, threads, title, nickname as \"user\" from t  INNER JOIN \"User\" ON t.user_id = \"User\".id;" \
-            .format(data['slug'], data['title'], data['user'], )
+        req_insert_forum = "WITH t as " \
+                           "(INSERT INTO \"Forum\" " \
+                           "(slug, title, user_id) " \
+                           "VALUES ('{}', '{}', " \
+                           "(SELECT id from \"User\" WHERE nickname = '{}')) " \
+                           "RETURNING posts, slug, threads, title, user_id )" \
+                           "select posts, slug, threads, title, nickname AS \"user\" " \
+                           "FROM t  INNER JOIN \"User\" ON t.user_id = \"User\".id;" \
+            .format(data['slug'],
+                    data['title'],
+                    data['user'], )
         try:
             cursor.execute(req_insert_forum)
             connection.commit()
         except psycopg2.Error as err:
             connection.rollback()
             if "user_id" in err.message:
-                return JsonResponse\
-                    ({"message": "Can't find user with nickname {}\n".format(data['user'])}, status=404)
+                return JsonResponse({"message": "Can't find user with nickname {}\n"
+                                     .format(data['user'])},
+                                    status=404, )
             if "forum_slug_unique" in err.message:
-                req_select_forum = "SELECT \"Forum\".posts, \"Forum\".slug, \"Forum\".threads,\"Forum\".title, \"User\".nickname as \"user\" \
-                    FROM \"Forum\" INNER JOIN \"User\" ON \"Forum\".user_id = \"User\".id where \"Forum\".slug = '{}';"\
+                req_select_forum = "SELECT \"Forum\".posts, \"Forum\".slug, " \
+                                   "\"Forum\".threads,\"Forum\".title, \"User\".nickname as \"user\" " \
+                                   "FROM \"Forum\" " \
+                                   "INNER JOIN \"User\" " \
+                                   "ON \"Forum\".user_id = \"User\".id " \
+                                   "WHERE \"Forum\".slug = '{}';"\
                     .format(data['slug'])
                 cursor.execute(req_select_forum)
-                return JsonResponse(dict(cursor.fetchone()),status=409)
-        return JsonResponse( dict(cursor.fetchone()), status=201, )
+                return JsonResponse(dict(cursor.fetchone()),
+                                    status=409, )
+        return JsonResponse(dict(cursor.fetchone()),
+                            status=201, )
 
 
+# request: not parameters
+# response: "posts", "slug", "threads", "title", "user"
 def details_forum(request, slug):
     with get_cursor() as (cursor, connection):
-        req_select_forum = "SELECT \"Forum\".posts, \"Forum\".slug, \"Forum\".threads,\"Forum\".title, \"User\".nickname as \"user\" \
-        FROM \"Forum\" INNER JOIN \"User\" ON \"Forum\".user_id = \"User\".id where \"Forum\".slug = '{}';"\
+        req_select_forum = "SELECT \"Forum\".posts, \"Forum\".slug, \"Forum\".threads," \
+                           "\"Forum\".title, \"User\".nickname AS \"user\" " \
+                           "FROM \"Forum\" " \
+                           "INNER JOIN \"User\" " \
+                           "ON \"Forum\".user_id = \"User\".id " \
+                           "WHERE \"Forum\".slug = '{}';"\
             .format(slug)
         try:
             cursor.execute(req_select_forum)
-            return JsonResponse(dict(cursor.fetchone()), status=200, )
+            return JsonResponse(dict(cursor.fetchone()),
+                                status=200, )
         except:
-            return JsonResponse({"message": "Can't find forum with slug = {}".\
-                                format(slug)}, status=404, )
+            return JsonResponse({"message": "Can't find forum with slug = {}"
+                                .format(slug)},
+                                status=404, )
 
 ########################################
-# Forum
+# Forum (end)
 ########################################
 
-#
-# {
-#   "author": "j.sparrow",
-#   "created": "2017-01-01T00:00:00.000Z",
-#   "message": "An urgent need to reveal the hiding place of Davy Jones. Who is willing to help in this matter?",
-#   "title": "Davy Jones cache"
-# }
+########################################
+# Thread (begin)
+########################################
 
 
+# request: "author", "created", "message", "title"
+# response: "author", "created", "forum", "id", "message", "slug", "title", "votes"
 def create_thread(request, slug):
     with get_cursor() as (cursor, connection):
         data = json.loads(request.body.decode('utf-8'))
-        req_insert_thread = "with t as ( INSERT INTO thread (author_id, created, forum_id, message, slug, title) \
-            VALUES ((SELECT id from \"User\" where nickname = '{}'), '{}', \
-                  (SELECT id from \"Forum\" where slug = '{}'),'{}', {},'{}')        \
-                  RETURNING author_id, created, forum_id,id, message, slug, title, votes\
-                  )\
-                  SELECT nickname as \"author\", created, f.slug as \"forum\",t.id, message, t.slug, t.title, t.votes\
-                   from t  \
-                   INNER JOIN \"User\" ON t.author_id = \"User\".id \
-                      INNER JOIN \"Forum\" f ON t.forum_id = f.id " \
+        req_insert_thread = "WITH t AS " \
+                            "(INSERT INTO thread (author_id, created, forum_id, message, slug, title)" \
+                            " VALUES ((SELECT id FROM \"User\" WHERE nickname = '{}'), '{}', " \
+                            "(SELECT id FROM \"Forum\" WHERE slug = '{}'),'{}', {},'{}') " \
+                            "RETURNING author_id, created, forum_id,id, message, slug, title, votes)" \
+                            "SELECT nickname AS \"author\", created, f.slug AS \"forum\",t.id, " \
+                            "message, t.slug, t.title, t.votes " \
+                            "FROM t  " \
+                            "INNER JOIN \"User\" ON t.author_id = \"User\".id " \
+                            "INNER JOIN \"Forum\" f ON t.forum_id = f.id " \
             .format(data['author'],
                     "now()" if data.get('created') is None else data.get('created'),
-                    slug, data['message'],
+                    slug,
+                    data['message'],
                     "NULL" if data.get('slug') is None else "'"+data.get('slug')+"'",
                     data['title'])
         try:
@@ -98,18 +124,20 @@ def create_thread(request, slug):
         except psycopg2.Error as err:
             connection.rollback()
             if "author_id" in err.message or "forum_id" in err.message:
-                return JsonResponse \
-                    ({"message": "Foreign key error"}, status=404)
-            if "thread_slug_unique" in err.message: #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                req_select_forum = "SELECT u.nickname as \"author\", t.created, f.id as \"forum\", t.id,t.message,t.slug, t.title, t.votes \
-                    FROM thread t WHERE t.slug = '{}' \
+                return JsonResponse({"message": "Foreign key error"},
+                                    status=404)
+            if "unique" in err.message:
+                req_select_thread = "SELECT u.nickname as \"author\", t.created, f.slug as \"forum\", t.id,t.message,t.slug, t.title, t.votes \
+                    FROM thread t  \
                     INNER JOIN \"User\" u ON t.author_id = u.id  \
-                    INNER JOIN \"Forum\" f ON t.forum_id = f.id;" \
+                    INNER JOIN \"Forum\" f ON t.forum_id = f.id " \
+                    "WHERE t.slug = '{}'" \
                     .format(data['slug'])
-                cursor.execute(req_select_forum)
-                return JsonResponse(dict(cursor.fetchone()), status=409)
-                return JsonResponse({1:1}, status=409)
+                cursor.execute(req_select_thread)
+                return JsonResponse(dict(cursor.fetchone()),
+                                    status=409)
         return JsonResponse(dict(cursor.fetchone()), status=201, )
+
 
 
 
@@ -150,6 +178,9 @@ def threads_forum(request, slug):
             return JsonResponse({"message": "cant' find"}, status=404, )
         return JsonResponse(map(lambda x: dict(x), cursor.fetchall()), safe = False, status=200, )
 
+########################################
+# Thread (end)
+########################################
 
 ########################################
 # User (begin)
@@ -293,7 +324,6 @@ def create_post(request, slug_or_id):
         try:
             cursor.execute(req_insert_posts)
             result = map(lambda x: dict(x), cursor.fetchall())
-            print result
             # user = cursor.fetchone()
             return JsonResponse(result, safe=False, status=201)
         except psycopg2.Error as err:
@@ -351,7 +381,7 @@ def status_service(request):
             return JsonResponse(dict(cursor.fetchone()),
                                 status=200)
         except:
-            print ("I cant get statistics information")
+            print ("I cant get statistics")
 
 
 ########################################
