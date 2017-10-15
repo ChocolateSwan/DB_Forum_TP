@@ -113,7 +113,6 @@ def forum_users(request, slug):
 # request: "author", "created", "message", "title"
 # response: "author", "created", "forum", "id", "message", "slug", "title", "votes"
 def create_thread(request, slug):
-    # TODO add +1 to forum
     with get_cursor() as (cursor, connection):
         data = json.loads(request.body.decode('utf-8'))
         req_insert_thread = "WITH t AS " \
@@ -150,7 +149,14 @@ def create_thread(request, slug):
                 cursor.execute(req_select_thread)
                 return JsonResponse(dict(cursor.fetchone()),
                                     status=409)
-        return JsonResponse(dict(cursor.fetchone()), status=201, )
+        thread = dict(cursor.fetchone())
+        try:
+            cursor.execute("BEGIN; UPDATE \"Forum\" SET threads = threads + 1 " \
+                              "WHERE slug = '{}' ; COMMIT;".format(thread['forum']))
+            return JsonResponse(thread, status=201, )
+        except BaseException as err:
+            print err.message
+
 
 
 # request: no parameters
@@ -394,7 +400,10 @@ def create_post(request, slug_or_id):
 
         try:
             cursor.execute(req_insert_posts)
+
             result = map(lambda x: dict(x), cursor.fetchall())
+            cursor.execute("BEGIN; UPDATE \"Forum\" SET posts = posts + {} " \
+                              "WHERE slug = '{}' ; COMMIT;".format( len(result),result[0]['forum']))
             # user = cursor.fetchone()
             return JsonResponse(result, safe=False, status=201)
         except psycopg2.Error as err:
@@ -429,7 +438,7 @@ def clear_service(request):
             cursor.commit()
             return JsonResponse({},
                                 status=200)
-        except:
+        except :
             print ("I cant delete all information from db")
 
 
