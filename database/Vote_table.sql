@@ -6,7 +6,6 @@
     vote INT NOT NULL,
 
 
-    CONSTRAINT valid_vote CHECK (vote = 1 OR vote = -1),
       CONSTRAINT Vote_thread_id_fk FOREIGN KEY (thread_id)
       REFERENCES public.thread (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,

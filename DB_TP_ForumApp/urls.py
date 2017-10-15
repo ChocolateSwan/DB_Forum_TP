@@ -17,7 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from application.views import create_forum, details_forum, \
     create_thread, create_user, profile_user, threads_forum, \
-    clear_service, create_post, status_service
+    clear_service, create_post, status_service, create_vote, \
+    forum_users
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,7 +30,11 @@ urlpatterns = [
     url(r'forum/(?P<slug>[.\w-]+)/threads', threads_forum),
     url(r'service/clear', clear_service),
     url(r'thread/(?P<slug_or_id>[.\w\d-]+)/create', create_post),
-    url(r'service/status', status_service,)
+    url(r'service/status', status_service),
+    url(r'thread/(?P<slug_or_id>[.\w\d-]+)/vote', create_vote),
+    url(r'forum/(?P<slug>[.\w-]+)/users', forum_users),
+
+
 
 
 

@@ -4,7 +4,7 @@ from psycopg2.pool import ThreadedConnectionPool
 def init_connection_pool():
     try:
         return ThreadedConnectionPool(2,
-                                      10,
+                                      20,
                                       'host=127.0.0.1 '
                                       'user=olyasur '
                                       'dbname=ForumTP '

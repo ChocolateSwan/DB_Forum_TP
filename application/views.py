@@ -39,7 +39,7 @@ def create_forum(request):
                            "VALUES ('{}', '{}', " \
                            "(SELECT id from \"User\" WHERE nickname = '{}')) " \
                            "RETURNING posts, slug, threads, title, user_id )" \
-                           "select posts, slug, threads, title, nickname AS \"user\" " \
+                           "SELECT posts, slug, threads, title, nickname AS \"user\" " \
                            "FROM t  INNER JOIN \"User\" ON t.user_id = \"User\".id;" \
             .format(data['slug'],
                     data['title'],
@@ -88,6 +88,19 @@ def details_forum(request, slug):
                                 .format(slug)},
                                 status=404, )
 
+def forum_users(request, slug):
+    with get_cursor() as (cursor, connection):
+        req_select_forum = "SELECT id from \"Forum\" where slug = '{}'".format(slug)
+        try:
+            cursor.execute(req_select_forum)
+            connection.commit()
+        except psycopg2.Error as err:
+            return JsonResponse({"message": "cant' find"}, status=404, )
+        forum = cursor.fetchone()
+        if forum is None:
+            return JsonResponse({"message": "cant' find"}, status=404, )
+        req_select_threads = ""
+
 ########################################
 # Forum (end)
 ########################################
@@ -100,6 +113,7 @@ def details_forum(request, slug):
 # request: "author", "created", "message", "title"
 # response: "author", "created", "forum", "id", "message", "slug", "title", "votes"
 def create_thread(request, slug):
+    # TODO add +1 to forum
     with get_cursor() as (cursor, connection):
         data = json.loads(request.body.decode('utf-8'))
         req_insert_thread = "WITH t AS " \
@@ -177,6 +191,9 @@ def threads_forum(request, slug):
             print err.message
             return JsonResponse({"message": "cant' find"}, status=404, )
         return JsonResponse(map(lambda x: dict(x), cursor.fetchall()), safe = False, status=200, )
+
+
+
 
 ########################################
 # Thread (end)
@@ -297,6 +314,7 @@ def profile_user(request, nickname):
 # Post
 ########################################
 def create_post(request, slug_or_id):
+    # TODO slug_or_id into one query
     with get_cursor() as (cursor, connection):
         data = json.loads(request.body)
         id_thread = None
@@ -387,3 +405,103 @@ def status_service(request):
 ########################################
 # Service Information (end)
 ########################################
+
+# request: "nickname", "voice"
+# response: "author", "created", "forum", "id", "message", "slug", "title", "votes"
+def create_vote(request, slug_or_id):
+    with get_cursor() as (cursor, connection):
+        data = json.loads(request.body.decode('utf-8'))
+        # Проверяем наличие Thread
+        id_thread = None
+        if slug_or_id.isdigit():
+            id_thread = slug_or_id
+        else:
+            cursor.execute("SELECT id from thread WHERE slug = '{}'".format(slug_or_id))
+            id_thread = cursor.fetchone()['id']
+            if id_thread is None:
+                return JsonResponse({"message": "No thread"}, status=404, )
+        # Проверяем наличие этого голоса
+        req_select_vote = "SELECT id from vote WHERE thread_id = {} AND " \
+                          "user_id = (SELECT id FROM \"User\" WHERE nickname = '{}') AND " \
+                          "vote = {}".format(id_thread, data['nickname'], data['voice'])
+        cursor.execute(req_select_vote)
+        vote = cursor.fetchone()
+
+        if vote is not None:
+            cursor.execute(" SELECT u.nickname AS \"author\", thread.created, " \
+                          "f.slug AS \"forum\", thread.id," \
+                          "thread.message,thread.slug, thread.title, thread.votes \
+                            FROM thread  \
+                            INNER JOIN \"User\" u ON thread.author_id = u.id  \
+                            INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
+                          "WHERE  thread.id = {};".format(id_thread))
+            tr = cursor.fetchone()
+            print tr
+            return JsonResponse(dict(tr),
+                                status=200, )
+
+        # Insert
+        req_insert_vote = "BEGIN; " \
+                          "INSERT INTO vote (user_id, thread_id, vote) " \
+                          "VALUES ((SELECT id FROM \"User\" WHERE nickname = '{}'), " \
+                          "{},{}); " \
+                          "UPDATE thread SET votes = votes + 1 " \
+                          "WHERE id = {}; " \
+                          "COMMIT;" \
+                          "SELECT u.nickname AS \"author\", thread.created, " \
+                          "f.slug AS \"forum\", thread.id," \
+                          "thread.message,thread.slug, thread.title, thread.votes \
+                            FROM thread  \
+                            INNER JOIN \"User\" u ON thread.author_id = u.id  \
+                            INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
+                          "WHERE  thread.id = {};"\
+            .format(data['nickname'], id_thread, data['voice'], id_thread ,id_thread)
+        try:
+            cursor.execute(req_insert_vote)
+            # cursor.commit()
+            return JsonResponse(dict(cursor.fetchone()),
+                                status=200, )
+        except psycopg2.Error as err:
+            connection.rollback()
+            print err.message
+            if "unique" in err.message:
+                req_update_vote = "BEGIN;" \
+                                  "UPDATE vote SET vote = {} " \
+                          "WHERE thread_id = {} and user_id = " \
+                          "(SELECT id FROM \"User\" WHERE nickname = '{}') ;" \
+                                  "UPDATE thread SET votes = votes + 2*{} WHERE id = {};" \
+                                  "COMMIT;" \
+                                  "SELECT u.nickname AS \"author\", thread.created, " \
+                          "f.slug AS \"forum\", thread.id," \
+                          "thread.message,thread.slug, thread.title, thread.votes \
+                            FROM thread  \
+                            INNER JOIN \"User\" u ON thread.author_id = u.id  \
+                            INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
+                          "WHERE  thread.id = {};" \
+                    .format(data['voice'], id_thread,data['nickname'], data['voice'], id_thread, id_thread)
+                cursor.execute(req_update_vote)
+                return  JsonResponse(dict(cursor.fetchone()),
+                                     status = 200, )
+            return JsonResponse({},
+                                status=404, )
+
+
+
+
+########################################
+# Vote (begin)
+########################################
+
+
+#
+# "WITH t as " \
+#                            "(INSERT INTO \"Forum\" " \
+#                            "(slug, title, user_id) " \
+#                            "VALUES ('{}', '{}', " \
+#                            "(SELECT id from \"User\" WHERE nickname = '{}')) " \
+#                            "RETURNING posts, slug, threads, title, user_id )" \
+#                            "select posts, slug, threads, title, nickname AS \"user\" " \
+#                            "FROM t  INNER JOIN \"User\" ON t.user_id = \"User\".id;" \
+#             .format(data['slug'],
+#                     data['title'],
+#                     data['user'], )
