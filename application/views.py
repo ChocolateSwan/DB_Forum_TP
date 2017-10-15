@@ -153,6 +153,62 @@ def create_thread(request, slug):
         return JsonResponse(dict(cursor.fetchone()), status=201, )
 
 
+# request: no parameters
+# response: "author", "created", "forum", "id", "message", "slug", "title", "votes"
+def thread_details(request, slug_or_id):
+    with get_cursor() as (cursor, connection):
+        # Проверяем наличие Thread
+        id_thread = None
+        if slug_or_id.isdigit():
+            id_thread = slug_or_id
+        else:
+            cursor.execute("SELECT id from thread WHERE slug = '{}'".format(slug_or_id))
+            id_thread = cursor.fetchone()['id']
+            if id_thread is None:
+                return JsonResponse({"message": "No thread"}, status=404, )
+        #Get request
+        if request.method == "GET":
+            req_select_thread =" SELECT u.nickname AS \"author\", thread.created, " \
+                              "f.slug AS \"forum\", thread.id," \
+                              "thread.message,thread.slug, thread.title, thread.votes \
+                                FROM thread  \
+                                INNER JOIN \"User\" u ON thread.author_id = u.id  \
+                                INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
+                              "WHERE  thread.id = {};".format(id_thread)
+            cursor.execute(req_select_thread)
+            tr = cursor.fetchone()
+            if tr is None:
+                return JsonResponse({"message": "No thread"}, status=404, )
+            return JsonResponse(dict(tr),
+                                status=200, )
+        # POST method
+        else:
+            data = json.loads(request.body.decode('utf-8'))
+            # Generate UPDATE thread
+            req_update_thread = "UPDATE thread SET "
+            for key in data:
+                req_update_thread += key + " = '" + str(data[key]) + "', "
+            req_update_thread = req_update_thread[:req_update_thread.rfind(',')]
+            req_update_thread += " where id = " + str(id_thread)
+            print req_update_thread
+            try:
+                cursor.execute(req_update_thread)
+                connection.commit()
+                req_select_thread = " SELECT u.nickname AS \"author\", thread.created, " \
+                                   "f.slug AS \"forum\", thread.id," \
+                                   "thread.message,thread.slug, thread.title, thread.votes \
+                                    FROM thread  \
+                                    INNER JOIN \"User\" u ON thread.author_id = u.id  \
+                                    INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
+                                   "WHERE  thread.id = {};".format(id_thread)
+                cursor.execute(req_select_thread)
+                tr = cursor.fetchone()
+                return JsonResponse(dict(tr), status=200, )
+            except psycopg2.Error as err:
+                print err.message
+                return JsonResponse({"message": "Error"}, status=404,)
+
+
 
 
 
@@ -188,7 +244,6 @@ def threads_forum(request, slug):
             cursor.execute(req_select_threads)
             connection.commit()
         except psycopg2.Error as err:
-            print err.message
             return JsonResponse({"message": "cant' find"}, status=404, )
         return JsonResponse(map(lambda x: dict(x), cursor.fetchall()), safe = False, status=200, )
 
@@ -274,7 +329,6 @@ def profile_user(request, nickname):
                     # Generate UPDATE User
                     req_update_user = "UPDATE \"User\" SET "
                     for key in data:
-                        print key
                         req_update_user += key+" = '" + str(data[key])+"', "
                     req_update_user = req_update_user[:req_update_user.rfind(',')]
                     req_update_user += " where id = " + str(user['id'])
@@ -338,7 +392,6 @@ def create_post(request, slug_or_id):
         req_insert_posts += "select t.id, u.nickname as \"author\", t.created,f.slug as \"forum\", t.isedited, t.message, t.parent,thread_id\
  as \"thread\" from t  INNER JOIN \"User\" u ON t.author_id = u.id inner join thread on thread.id = t.thread_id inner join \"Forum\" f on thread.forum_id = f.id;"
 
-        print req_insert_posts
         try:
             cursor.execute(req_insert_posts)
             result = map(lambda x: dict(x), cursor.fetchall())
@@ -347,9 +400,6 @@ def create_post(request, slug_or_id):
         except psycopg2.Error as err:
             print err.message
             pass
-
-
-
         return JsonResponse({1:1}, status=200)
 
 
@@ -406,6 +456,11 @@ def status_service(request):
 # Service Information (end)
 ########################################
 
+
+########################################
+# Vote (begin)
+########################################
+
 # request: "nickname", "voice"
 # response: "author", "created", "forum", "id", "message", "slug", "title", "votes"
 def create_vote(request, slug_or_id):
@@ -436,7 +491,6 @@ def create_vote(request, slug_or_id):
                             INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
                           "WHERE  thread.id = {};".format(id_thread))
             tr = cursor.fetchone()
-            print tr
             return JsonResponse(dict(tr),
                                 status=200, )
 
@@ -489,19 +543,6 @@ def create_vote(request, slug_or_id):
 
 
 ########################################
-# Vote (begin)
+# Vote (end)
 ########################################
 
-
-#
-# "WITH t as " \
-#                            "(INSERT INTO \"Forum\" " \
-#                            "(slug, title, user_id) " \
-#                            "VALUES ('{}', '{}', " \
-#                            "(SELECT id from \"User\" WHERE nickname = '{}')) " \
-#                            "RETURNING posts, slug, threads, title, user_id )" \
-#                            "select posts, slug, threads, title, nickname AS \"user\" " \
-#                            "FROM t  INNER JOIN \"User\" ON t.user_id = \"User\".id;" \
-#             .format(data['slug'],
-#                     data['title'],
-#                     data['user'], )
