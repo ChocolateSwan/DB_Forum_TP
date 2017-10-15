@@ -88,18 +88,55 @@ def details_forum(request, slug):
                                 .format(slug)},
                                 status=404, )
 
+
 def forum_users(request, slug):
     with get_cursor() as (cursor, connection):
         req_select_forum = "SELECT id from \"Forum\" where slug = '{}'".format(slug)
         try:
             cursor.execute(req_select_forum)
-            connection.commit()
         except psycopg2.Error as err:
             return JsonResponse({"message": "cant' find"}, status=404, )
         forum = cursor.fetchone()
+
         if forum is None:
             return JsonResponse({"message": "cant' find"}, status=404, )
-        req_select_threads = ""
+        req_select_users = '''
+                   select DISTINCT about, email, fullname, nickname from "Forum" 
+                    inner join thread on "Forum".id = thread.forum_id
+                    inner join "User" on thread.author_id = "User".id 
+                    where "Forum".slug = '{}' {}
+                    
+                    
+                    UNION 
+                    
+                    select DISTINCT about, email, fullname, nickname from post
+                    inner join "User" on post.author_id = "User".id
+                    inner join thread on post.thread_id = thread.id
+                    inner join "Forum" on thread.forum_id = "Forum".id 
+                    where "Forum".slug = '{}' {}
+                    
+                    
+                    order by nickname {}
+                    {}
+        '''.format(slug,
+                   "and nickname > '{}'".format(request.GET.get('since')) if request.GET.get('since') is not None else " ",
+                   slug,
+                   "and nickname > '{}'".format(request.GET.get('since')) if request.GET.get('since') is not None else " ",
+                   "DESC" if request.GET.get('desc') == "true" else "ASC",
+                   "LIMIT {}".format(int(request.GET.get('limit'))) if request.GET.get('limit') is not None else " "
+
+        )
+        if request.GET.get('desc') == "true":
+            req_select_users = req_select_users.replace('>','<')
+        try:
+            cursor.execute(req_select_users)
+            return JsonResponse(map(lambda x: dict(x), cursor.fetchall()), safe=False, status=200, )
+        except:
+            print "forum_users ВСЕ ПЛОХО"
+
+
+
+
 
 ########################################
 # Forum (end)
@@ -255,6 +292,12 @@ def threads_forum(request, slug):
 
 
 
+def thread_posts(request,slug_or_id):
+    with get_cursor() as (cursor, connection):
+        pass
+
+
+
 
 ########################################
 # Thread (end)
@@ -381,10 +424,14 @@ def create_post(request, slug_or_id):
         if slug_or_id.isdigit():
             id_thread = slug_or_id
         else:
+            print slug_or_id
             cursor.execute("SELECT id from thread WHERE slug = '{}'".format(slug_or_id))
-            id_thread = cursor.fetchone()['id']
-            if id_thread == None:
+            id_thread = cursor.fetchone()
+            if id_thread is None:
                 return JsonResponse({"message": "No thread"}, status=404, )
+            else:
+                id_thread = id_thread['id']
+        print id_thread
         req_insert_posts = "WITH t as (INSERT INTO post (author_id, created, message,parent,thread_id) VALUES "
         for post in list(data):
             req_insert_posts += " ((SELECT id FROM \"User\" WHERE nickname = '{}'), now(), '{}',{},{}),"\
@@ -396,7 +443,7 @@ def create_post(request, slug_or_id):
         req_insert_posts = req_insert_posts[:req_insert_posts.rfind(',')]
         req_insert_posts += " RETURNING id, author_id, created,isedited, message,parent,thread_id)"
         req_insert_posts += "select t.id, u.nickname as \"author\", t.created,f.slug as \"forum\", t.isedited, t.message, t.parent,thread_id\
- as \"thread\" from t  INNER JOIN \"User\" u ON t.author_id = u.id inner join thread on thread.id = t.thread_id inner join \"Forum\" f on thread.forum_id = f.id;"
+                             as \"thread\" from t  INNER JOIN \"User\" u ON t.author_id = u.id inner join thread on thread.id = t.thread_id inner join \"Forum\" f on thread.forum_id = f.id;"
 
         try:
             cursor.execute(req_insert_posts)
@@ -407,9 +454,104 @@ def create_post(request, slug_or_id):
             # user = cursor.fetchone()
             return JsonResponse(result, safe=False, status=201)
         except psycopg2.Error as err:
+            print "99999999999999999999999"
+            if "author_id" in err.message:
+                return JsonResponse({"message": "no author"}, status=404)
+            if "thread" in err.message:
+                return JsonResponse({"message": "no thread"}, status=404)
+
             print err.message
             pass
         return JsonResponse({1:1}, status=200)
+
+
+
+def post_details(request, id):
+    print request.GET.get('related')
+    with get_cursor() as (cursor, connection):
+        if request.method == "GET":
+            req_select_post = '''
+                        select  u.nickname as "author", p.created, f.slug as "forum", p.id, p.isedited as "isEdited", p.message, p.parent, p.thread_id as "thread"
+            from post p
+            inner join "User" u on u.id = p.author_id
+            inner join thread t on p.thread_id = t.id
+            inner join "Forum" f on f.id = t.forum_id
+            where p.id = {}
+                        '''.format(id)
+            cursor.execute(req_select_post)
+            post = (cursor.fetchone())
+            if post is None:
+                return JsonResponse({"message": "no post"}, status=404)
+            result = {"post":dict(post)}
+            if request.GET.get('related') is not None:
+                if "user" in request.GET.get('related'):
+                    req_select_user = '''
+                    SELECT about, email, fullname, nickname
+                    FROM "User" 
+                    where nickname = '{}';
+                    '''.format(post['author'])
+                    cursor.execute(req_select_user)
+                    user = cursor.fetchone()
+                    result['author'] = dict(user)
+                if "thread" in  request.GET.get('related'):
+                    req_select_thread = '''SELECT nickname as "author", created, f.slug as "forum",t.id, message, t.slug, t.title, t.votes  
+                            FROM thread t 
+                            INNER JOIN "User" u ON t.author_id = u.id 
+                            INNER JOIN "Forum" f ON t.forum_id = f.id WHERE t.id = {}
+                    '''.format(post['thread'])
+                    cursor.execute(req_select_thread)
+                    thread = cursor.fetchone()
+                    result['thread'] = dict(thread)
+                if "forum" in request.GET.get('related'):
+                    req_select_thread = '''
+                    SELECT  "Forum".posts,  "Forum".slug,  "Forum".threads,
+                        "Forum".title,  "User".nickname AS  "user"
+                        FROM  "Forum"
+                        INNER JOIN  "User"
+                        ON  "Forum".user_id =  "User".id
+                        WHERE  "Forum".slug = '{}';
+                    '''.format(post['forum'])
+                    cursor.execute(req_select_thread)
+                    forum = cursor.fetchone()
+                    result['forum'] = dict(forum)
+            return JsonResponse(result, status=200, )
+        else:
+            data = json.loads(request.body.decode('utf-8'))
+            req_select_post = '''
+                         select  u.nickname as "author", p.created, f.slug as "forum", p.id, p.isedited as "isEdited", p.message, p.parent, p.thread_id as "thread"
+            from post p
+            inner join "User" u on u.id = p.author_id
+            inner join thread t on p.thread_id = t.id
+            inner join "Forum" f on f.id = t.forum_id
+            where p.id = {}
+            '''.format(id)
+            cursor.execute(req_select_post)
+            post = cursor.fetchone()
+            if post is None:
+                return JsonResponse({"message":"post not found"}, status=404, )
+            if data.get('message') is None or post['message'] == data['message']:
+                return JsonResponse(dict(post), status=200, )
+            req_update_post = '''
+            BEGIN;
+            UPDATE post SET message = '{}', isedited = true
+            WHERE id = {};
+            COMMIT;
+             select  u.nickname as "author", p.created, f.slug as "forum", p.id, p.isedited as "isEdited", p.message, p.parent, p.thread_id as "thread"
+            from post p
+            inner join "User" u on u.id = p.author_id
+            inner join thread t on p.thread_id = t.id
+            inner join "Forum" f on f.id = t.forum_id
+            where p.id = {}
+            '''.format(data['message'], id,id)
+            cursor.execute(req_update_post)
+            post = dict(cursor.fetchone())
+
+            return JsonResponse(post, status=200, )
+
+
+
+
+
 
 
 
@@ -435,7 +577,6 @@ def clear_service(request):
                           DELETE FROM \"User\""
         try:
             cursor.execute(req_delete_all)
-            cursor.commit()
             return JsonResponse({},
                                 status=200)
         except :

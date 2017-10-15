@@ -18,7 +18,7 @@ from django.contrib import admin
 from application.views import create_forum, details_forum, \
     create_thread, create_user, profile_user, threads_forum, \
     clear_service, create_post, status_service, create_vote, \
-    forum_users,thread_details
+    forum_users,thread_details, thread_posts, post_details
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -34,6 +34,9 @@ urlpatterns = [
     url(r'thread/(?P<slug_or_id>[.\w\d-]+)/vote', create_vote),
     url(r'forum/(?P<slug>[.\w-]+)/users', forum_users),
     url(r'thread/(?P<slug_or_id>[.\w\d-]+)/details', thread_details),
+    url(r'thread/(?P<slug_or_id>[.\w\d-]+)/posts', thread_posts),
+    url(r'post/(?P<id>[\d]+)/details', post_details),
+
 
 
 
