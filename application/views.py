@@ -234,7 +234,6 @@ def thread_details(request, slug_or_id):
                                 status=200, )
         # POST method
         else:
-            гг
             data = json.loads(request.body.decode('utf-8'))
             # Generate UPDATE thread
             req_select_thread = " SELECT u.nickname AS \"author\", thread.created, " \
@@ -244,7 +243,7 @@ def thread_details(request, slug_or_id):
                                  INNER JOIN \"User\" u ON thread.author_id = u.id  \
                                  INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
                                 "WHERE  thread.id = {};".format(id_thread)
-            if data.get('message') == None:
+            if len(data.keys()) == 0:
                 cursor.execute(req_select_thread)
                 return JsonResponse(dict(cursor.fetchone()), status=200, )
 
@@ -254,6 +253,7 @@ def thread_details(request, slug_or_id):
             req_update_thread = req_update_thread[:req_update_thread.rfind(',')]
             req_update_thread += " where id = " + str(id_thread)
             print req_update_thread
+            print "qqqqqqqqqqqqqqqqqq"
             try:
 
                 cursor.execute(req_update_thread)
