@@ -234,6 +234,7 @@ def thread_details(request, slug_or_id):
                                 status=200, )
         # POST method
         else:
+            гг
             data = json.loads(request.body.decode('utf-8'))
             # Generate UPDATE thread
             req_select_thread = " SELECT u.nickname AS \"author\", thread.created, " \
