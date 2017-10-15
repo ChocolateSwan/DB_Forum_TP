@@ -203,6 +203,12 @@ def thread_details(request, slug_or_id):
         # Проверяем наличие Thread
         id_thread = None
         if slug_or_id.isdigit():
+            cursor.execute("SELECT id from thread WHERE id = {}".format(slug_or_id))
+            id_thread = cursor.fetchone()
+            if id_thread is None:
+                return JsonResponse({"message": "No thread"}, status=404, )
+            else:
+                id_thread = id_thread['id']
             id_thread = slug_or_id
         else:
             cursor.execute("SELECT id from thread WHERE slug = '{}'".format(slug_or_id))
@@ -210,7 +216,7 @@ def thread_details(request, slug_or_id):
             if id_thread is None:
                 return JsonResponse({"message": "No thread"}, status=404, )
             else:
-                id_thread = id_thread[id]
+                id_thread = id_thread['id']
         #Get request
         if request.method == "GET":
             req_select_thread =" SELECT u.nickname AS \"author\", thread.created, " \
@@ -228,9 +234,8 @@ def thread_details(request, slug_or_id):
                                 status=200, )
         # POST method
         else:
-            print "hello"
-
             data = json.loads(request.body.decode('utf-8'))
+            # Generate UPDATE thread
             req_select_thread = " SELECT u.nickname AS \"author\", thread.created, " \
                                 "f.slug AS \"forum\", thread.id," \
                                 "thread.message,thread.slug, thread.title, thread.votes \
@@ -238,7 +243,10 @@ def thread_details(request, slug_or_id):
                                  INNER JOIN \"User\" u ON thread.author_id = u.id  \
                                  INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
                                 "WHERE  thread.id = {};".format(id_thread)
-            # Generate UPDATE thread
+            if data.get('message') == None:
+                cursor.execute(req_select_thread)
+                return JsonResponse(dict(cursor.fetchone()), status=200, )
+
             req_update_thread = "UPDATE thread SET "
             for key in data:
                 req_update_thread += key + " = '" + str(data[key]) + "', "
@@ -246,8 +254,10 @@ def thread_details(request, slug_or_id):
             req_update_thread += " where id = " + str(id_thread)
             print req_update_thread
             try:
+
                 cursor.execute(req_update_thread)
                 connection.commit()
+
                 cursor.execute(req_select_thread)
                 tr = cursor.fetchone()
                 return JsonResponse(dict(tr), status=200, )
