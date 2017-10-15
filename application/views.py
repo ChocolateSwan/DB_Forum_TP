@@ -253,7 +253,6 @@ def thread_details(request, slug_or_id):
             req_update_thread = req_update_thread[:req_update_thread.rfind(',')]
             req_update_thread += " where id = " + str(id_thread)
             print req_update_thread
-            print "qqqqqqqqqqqqqqqqqq"
             try:
 
                 cursor.execute(req_update_thread)
@@ -309,7 +308,18 @@ def threads_forum(request, slug):
 
 def thread_posts(request,slug_or_id):
     with get_cursor() as (cursor, connection):
-        pass
+        id_thread = None
+        if slug_or_id.isdigit():
+            id_thread = slug_or_id
+        else:
+            print slug_or_id
+            cursor.execute("SELECT id from thread WHERE slug = '{}'".format(slug_or_id))
+            id_thread = cursor.fetchone()
+            if id_thread is None:
+                return JsonResponse({"message": "No thread"}, status=404, )
+            else:
+                id_thread = id_thread['id']
+
 
 
 
@@ -637,9 +647,12 @@ def create_vote(request, slug_or_id):
             id_thread = slug_or_id
         else:
             cursor.execute("SELECT id from thread WHERE slug = '{}'".format(slug_or_id))
-            id_thread = cursor.fetchone()['id']
+            id_thread = cursor.fetchone()
             if id_thread is None:
                 return JsonResponse({"message": "No thread"}, status=404, )
+            else:
+                id_thread = id_thread['id']
+
         # Проверяем наличие этого голоса
         req_select_vote = "SELECT id from vote WHERE thread_id = {} AND " \
                           "user_id = (SELECT id FROM \"User\" WHERE nickname = '{}') AND " \

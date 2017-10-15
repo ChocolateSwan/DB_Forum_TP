@@ -34,79 +34,80 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="245" column="36" lean-forward="false" selection-start-line="245" selection-start-column="36" selection-end-line="245" selection-end-column="36" />
+            <state relative-caret-position="238">
+              <caret line="649" column="41" lean-forward="false" selection-start-line="649" selection-start-column="41" selection-end-line="649" selection-end-column="41" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
-                <marker date="1508095449071" expanded="true" signature="1290:1433" ph="SELECT posts... t" />
-                <marker date="1508095449071" expanded="true" signature="1296:1433" ph="select posts... t" />
-                <marker date="1508095449071" expanded="true" signature="2029:2431" ph="SELECT \&quot;For... Forum" />
-                <marker date="1508095449071" expanded="true" signature="2420:2431" ph="SELECT posts... Forum" />
-                <marker date="1508095449071" expanded="true" signature="2925:3287" ph="SELECT \&quot;For... " />
-                <marker date="1508095449071" expanded="true" signature="2925:3288" ph="SELECT \&quot;For... Forum" />
-                <marker date="1508095449071" expanded="true" signature="2931:3227" ph="select forum... " />
-                <marker date="1508095449071" expanded="true" signature="2931:3286" ph="SELECT posts... Forum" />
-                <marker date="1508095449071" expanded="true" signature="3775:3817" ph="SELECT id fr... Forum" />
-                <marker date="1508095449071" expanded="true" signature="4185:4435" ph="select DISTI... Forum" />
-                <marker date="1508095449071" expanded="true" signature="4185:4505" ph="select DISTI... Forum" />
-                <marker date="1508095449071" expanded="true" signature="4185:4967" ph="select DISTI... " />
-                <marker date="1508095449071" expanded="true" signature="4548:4860" ph="select DISTI... post" />
-                <marker date="1508095449071" expanded="true" signature="4548:4861" ph="select DISTI... post" />
-                <marker date="1508095449071" expanded="true" signature="4548:4967" ph="select DISTI... post" />
-                <marker date="1508095449071" expanded="true" signature="6745:7077" ph="SELECT nickn... t" />
-                <marker date="1508095449071" expanded="true" signature="7817:7957" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="7817:8024" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="7817:8025" ph="SELECT \&quot;For... Forum" />
-                <marker date="1508095449071" expanded="true" signature="7817:8053" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="7817:8058" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="7817:8091" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="7817:8136" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="8430:8525" ph="UPDATE \&quot;For... " />
-                <marker date="1508095449071" expanded="true" signature="9004:9037" ph="SELECT id fr... thread" />
-                <marker date="1508095449071" expanded="true" signature="9004:9039" ph="SELECT id fr... thread" />
-                <marker date="1508095449071" expanded="true" signature="9352:9390" ph="SELECT id fr... thread" />
-                <marker date="1508095449071" expanded="true" signature="9352:9391" ph="SELECT id fr... thread" />
-                <marker date="1508095449071" expanded="true" signature="9717:10190" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="10652:11134" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="12216:12258" ph="SELECT id fr... Forum" />
-                <marker date="1508095449071" expanded="true" signature="12636:12868" ph="SELECT nickn... thread" />
-                <marker date="1508095449071" expanded="true" signature="14330:14479" ph="INSERT INTO \&quot;User\&quot;... " />
-                <marker date="1508095449071" expanded="true" signature="14857:15026" ph="SELECT about... User" />
-                <marker date="1508095449071" expanded="true" signature="15910:16063" ph="SELECT about... User" />
-                <marker date="1508095449071" expanded="true" signature="16619:16742" ph="SELECT id FR... User" />
-                <marker date="1508095449071" expanded="true" signature="17967:18128" ph="SELECT about... User" />
-                <marker date="1508095449071" expanded="true" signature="19037:19076" ph="SELECT id fr... thread" />
-                <marker date="1508095449071" expanded="true" signature="19992:20293" ph="select t.id,... t" />
-                <marker date="1508095449071" expanded="true" signature="20454:20546" ph="UPDATE \&quot;For... " />
-                <marker date="1508095449071" expanded="true" signature="21322:21672" ph="select u.nic... post" />
-                <marker date="1508095449071" expanded="true" signature="22113:22227" ph="SELECT about... User" />
-                <marker date="1508095449071" expanded="true" signature="22526:22821" ph="SELECT nickn... thread" />
-                <marker date="1508095449071" expanded="true" signature="23146:23457" ph="SELECT &quot;Foru... Forum" />
-                <marker date="1508095449071" expanded="true" signature="23842:24192" ph="select u.nic... post" />
-                <marker date="1508095449071" expanded="true" signature="24621:24692" ph="UPDATE post " />
-                <marker date="1508095449071" expanded="true" signature="24729:25079" ph="select u.nic... post" />
-                <marker date="1508095449071" expanded="true" signature="25661:25677" ph="DELETE FROM " />
-                <marker date="1508095449071" expanded="true" signature="25707:25723" ph="DELETE FROM " />
-                <marker date="1508095449071" expanded="true" signature="25752:25770" ph="DELETE FROM " />
-                <marker date="1508095449071" expanded="true" signature="25800:25821" ph="DELETE FROM " />
-                <marker date="1508095449071" expanded="true" signature="25851:25871" ph="DELETE FROM " />
-                <marker date="1508095449071" expanded="true" signature="26264:26577" ph="SELECT (SELE... " />
-                <marker date="1508095449071" expanded="true" signature="26305:26336" ph="SELECT count... Forum" />
-                <marker date="1508095449071" expanded="true" signature="26385:26412" ph="SELECT count... post" />
-                <marker date="1508095449071" expanded="true" signature="26460:26488" ph="SELECT count... thread" />
-                <marker date="1508095449071" expanded="true" signature="26534:26564" ph="SELECT count... User" />
-                <marker date="1508095449071" expanded="true" signature="27440:27479" ph="SELECT id fr... thread" />
-                <marker date="1508095449071" expanded="true" signature="27727:27903" ph="SELECT id fr... vote" />
-                <marker date="1508095449071" expanded="true" signature="27814:27859" ph="SELECT id FR... User" />
-                <marker date="1508095449071" expanded="true" signature="28090:28539" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="28769:28938" ph="INSERT INTO vote... " />
-                <marker date="1508095449071" expanded="true" signature="28853:28898" ph="SELECT id FR... User" />
-                <marker date="1508095449071" expanded="true" signature="28971:29049" ph="UPDATE threa... " />
-                <marker date="1508095449071" expanded="true" signature="29122:29571" ph="SELECT u.nic... thread" />
-                <marker date="1508095449071" expanded="true" signature="30075:30245" ph="UPDATE vote " />
-                <marker date="1508095449071" expanded="true" signature="30199:30244" ph="SELECT id FR... User" />
-                <marker date="1508095449071" expanded="true" signature="30286:30336" ph="UPDATE threa... " />
-                <marker date="1508095449071" expanded="true" signature="30424:30873" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="1290:1433" ph="SELECT posts... t" />
+                <marker date="1508101661603" expanded="true" signature="1296:1433" ph="select posts... t" />
+                <marker date="1508101661603" expanded="true" signature="2029:2431" ph="SELECT \&quot;For... Forum" />
+                <marker date="1508101661603" expanded="true" signature="2420:2431" ph="SELECT posts... Forum" />
+                <marker date="1508101661603" expanded="true" signature="2925:3287" ph="SELECT \&quot;For... " />
+                <marker date="1508101661603" expanded="true" signature="2925:3288" ph="SELECT \&quot;For... Forum" />
+                <marker date="1508101661603" expanded="true" signature="2931:3227" ph="select forum... " />
+                <marker date="1508101661603" expanded="true" signature="2931:3286" ph="SELECT posts... Forum" />
+                <marker date="1508101661603" expanded="true" signature="3775:3817" ph="SELECT id fr... Forum" />
+                <marker date="1508101661603" expanded="true" signature="4185:4435" ph="select DISTI... Forum" />
+                <marker date="1508101661603" expanded="true" signature="4185:4505" ph="select DISTI... Forum" />
+                <marker date="1508101661603" expanded="true" signature="4185:4967" ph="select DISTI... " />
+                <marker date="1508101661603" expanded="true" signature="4548:4860" ph="select DISTI... post" />
+                <marker date="1508101661603" expanded="true" signature="4548:4861" ph="select DISTI... post" />
+                <marker date="1508101661603" expanded="true" signature="4548:4967" ph="select DISTI... post" />
+                <marker date="1508101661603" expanded="true" signature="6745:7077" ph="SELECT nickn... t" />
+                <marker date="1508101661603" expanded="true" signature="7817:7957" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="7817:8024" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="7817:8025" ph="SELECT \&quot;For... Forum" />
+                <marker date="1508101661603" expanded="true" signature="7817:8053" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="7817:8058" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="7817:8091" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="7817:8136" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="8430:8525" ph="UPDATE \&quot;For... " />
+                <marker date="1508101661603" expanded="true" signature="9004:9037" ph="SELECT id fr... thread" />
+                <marker date="1508101661603" expanded="true" signature="9004:9039" ph="SELECT id fr... thread" />
+                <marker date="1508101661603" expanded="true" signature="9352:9390" ph="SELECT id fr... thread" />
+                <marker date="1508101661603" expanded="true" signature="9352:9391" ph="SELECT id fr... thread" />
+                <marker date="1508101661603" expanded="true" signature="9717:10190" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="10652:11134" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="12177:12219" ph="SELECT id fr... Forum" />
+                <marker date="1508101661603" expanded="true" signature="12597:12829" ph="SELECT nickn... thread" />
+                <marker date="1508101661603" expanded="true" signature="13981:14020" ph="SELECT id fr... thread" />
+                <marker date="1508101661603" expanded="true" signature="14718:14867" ph="INSERT INTO \&quot;User\&quot;... " />
+                <marker date="1508101661603" expanded="true" signature="15245:15414" ph="SELECT about... User" />
+                <marker date="1508101661603" expanded="true" signature="16298:16451" ph="SELECT about... User" />
+                <marker date="1508101661603" expanded="true" signature="17007:17130" ph="SELECT id FR... User" />
+                <marker date="1508101661603" expanded="true" signature="18355:18516" ph="SELECT about... User" />
+                <marker date="1508101661603" expanded="true" signature="19425:19464" ph="SELECT id fr... thread" />
+                <marker date="1508101661603" expanded="true" signature="20380:20681" ph="select t.id,... t" />
+                <marker date="1508101661603" expanded="true" signature="20842:20934" ph="UPDATE \&quot;For... " />
+                <marker date="1508101661603" expanded="true" signature="21710:22060" ph="select u.nic... post" />
+                <marker date="1508101661603" expanded="true" signature="22501:22615" ph="SELECT about... User" />
+                <marker date="1508101661603" expanded="true" signature="22914:23209" ph="SELECT nickn... thread" />
+                <marker date="1508101661603" expanded="true" signature="23534:23845" ph="SELECT &quot;Foru... Forum" />
+                <marker date="1508101661603" expanded="true" signature="24230:24580" ph="select u.nic... post" />
+                <marker date="1508101661603" expanded="true" signature="25009:25080" ph="UPDATE post " />
+                <marker date="1508101661603" expanded="true" signature="25117:25467" ph="select u.nic... post" />
+                <marker date="1508101661603" expanded="true" signature="26049:26065" ph="DELETE FROM " />
+                <marker date="1508101661603" expanded="true" signature="26095:26111" ph="DELETE FROM " />
+                <marker date="1508101661603" expanded="true" signature="26140:26158" ph="DELETE FROM " />
+                <marker date="1508101661603" expanded="true" signature="26188:26209" ph="DELETE FROM " />
+                <marker date="1508101661603" expanded="true" signature="26239:26259" ph="DELETE FROM " />
+                <marker date="1508101661603" expanded="true" signature="26652:26965" ph="SELECT (SELE... " />
+                <marker date="1508101661603" expanded="true" signature="26693:26724" ph="SELECT count... Forum" />
+                <marker date="1508101661603" expanded="true" signature="26773:26800" ph="SELECT count... post" />
+                <marker date="1508101661603" expanded="true" signature="26848:26876" ph="SELECT count... thread" />
+                <marker date="1508101661603" expanded="true" signature="26922:26952" ph="SELECT count... User" />
+                <marker date="1508101661603" expanded="true" signature="27828:27867" ph="SELECT id fr... thread" />
+                <marker date="1508101661603" expanded="true" signature="28172:28348" ph="SELECT id fr... vote" />
+                <marker date="1508101661603" expanded="true" signature="28259:28304" ph="SELECT id FR... User" />
+                <marker date="1508101661603" expanded="true" signature="28535:28984" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="29214:29383" ph="INSERT INTO vote... " />
+                <marker date="1508101661603" expanded="true" signature="29298:29343" ph="SELECT id FR... User" />
+                <marker date="1508101661603" expanded="true" signature="29416:29494" ph="UPDATE threa... " />
+                <marker date="1508101661603" expanded="true" signature="29567:30016" ph="SELECT u.nic... thread" />
+                <marker date="1508101661603" expanded="true" signature="30520:30690" ph="UPDATE vote " />
+                <marker date="1508101661603" expanded="true" signature="30644:30689" ph="SELECT id FR... User" />
+                <marker date="1508101661603" expanded="true" signature="30731:30781" ph="UPDATE threa... " />
+                <marker date="1508101661603" expanded="true" signature="30869:31318" ph="SELECT u.nic... thread" />
               </folding>
             </state>
           </provider>
@@ -135,8 +136,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="67" />
+            <state relative-caret-position="432">
+              <caret line="33" column="53" lean-forward="true" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
               <folding>
                 <element signature="e#648#680#0" expanded="true" />
               </folding>
@@ -220,6 +221,7 @@
       <find>map</find>
       <find>GET</find>
       <find>thread_details</find>
+      <find>thread_posts</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -442,8 +444,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38638744" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16271374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3434555" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16271374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -522,75 +524,76 @@
           <caret line="97" column="40" lean-forward="true" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <marker date="1508095449071" expanded="true" signature="1290:1433" ph="SELECT posts... t" />
-            <marker date="1508095449071" expanded="true" signature="1296:1433" ph="select posts... t" />
-            <marker date="1508095449071" expanded="true" signature="2029:2431" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2420:2431" ph="SELECT posts... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2925:3287" ph="SELECT \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="2925:3288" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2931:3227" ph="select forum... " />
-            <marker date="1508095449071" expanded="true" signature="2931:3286" ph="SELECT posts... Forum" />
-            <marker date="1508095449071" expanded="true" signature="3775:3817" ph="SELECT id fr... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4435" ph="select DISTI... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4505" ph="select DISTI... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4967" ph="select DISTI... " />
-            <marker date="1508095449071" expanded="true" signature="4548:4860" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="4548:4861" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="4548:4967" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="6745:7077" ph="SELECT nickn... t" />
-            <marker date="1508095449071" expanded="true" signature="7817:7957" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8024" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8025" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="7817:8053" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8058" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8091" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8136" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="8430:8525" ph="UPDATE \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="9004:9037" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9004:9039" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9352:9390" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9352:9391" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9717:10190" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="10652:11134" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="12216:12258" ph="SELECT id fr... Forum" />
-            <marker date="1508095449071" expanded="true" signature="12636:12868" ph="SELECT nickn... thread" />
-            <marker date="1508095449071" expanded="true" signature="14330:14479" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1508095449071" expanded="true" signature="14857:15026" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="15910:16063" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="16619:16742" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="17967:18128" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="19037:19076" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="19992:20293" ph="select t.id,... t" />
-            <marker date="1508095449071" expanded="true" signature="20454:20546" ph="UPDATE \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="21322:21672" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="22113:22227" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="22526:22821" ph="SELECT nickn... thread" />
-            <marker date="1508095449071" expanded="true" signature="23146:23457" ph="SELECT &quot;Foru... Forum" />
-            <marker date="1508095449071" expanded="true" signature="23842:24192" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="24621:24692" ph="UPDATE post " />
-            <marker date="1508095449071" expanded="true" signature="24729:25079" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="25661:25677" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25707:25723" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25752:25770" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25800:25821" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25851:25871" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="26264:26577" ph="SELECT (SELE... " />
-            <marker date="1508095449071" expanded="true" signature="26305:26336" ph="SELECT count... Forum" />
-            <marker date="1508095449071" expanded="true" signature="26385:26412" ph="SELECT count... post" />
-            <marker date="1508095449071" expanded="true" signature="26460:26488" ph="SELECT count... thread" />
-            <marker date="1508095449071" expanded="true" signature="26534:26564" ph="SELECT count... User" />
-            <marker date="1508095449071" expanded="true" signature="27440:27479" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="27727:27903" ph="SELECT id fr... vote" />
-            <marker date="1508095449071" expanded="true" signature="27814:27859" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="28090:28539" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="28769:28938" ph="INSERT INTO vote... " />
-            <marker date="1508095449071" expanded="true" signature="28853:28898" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="28971:29049" ph="UPDATE threa... " />
-            <marker date="1508095449071" expanded="true" signature="29122:29571" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="30075:30245" ph="UPDATE vote " />
-            <marker date="1508095449071" expanded="true" signature="30199:30244" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="30286:30336" ph="UPDATE threa... " />
-            <marker date="1508095449071" expanded="true" signature="30424:30873" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="1290:1433" ph="SELECT posts... t" />
+            <marker date="1508101661603" expanded="true" signature="1296:1433" ph="select posts... t" />
+            <marker date="1508101661603" expanded="true" signature="2029:2431" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2420:2431" ph="SELECT posts... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2925:3287" ph="SELECT \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="2925:3288" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2931:3227" ph="select forum... " />
+            <marker date="1508101661603" expanded="true" signature="2931:3286" ph="SELECT posts... Forum" />
+            <marker date="1508101661603" expanded="true" signature="3775:3817" ph="SELECT id fr... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4435" ph="select DISTI... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4505" ph="select DISTI... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4967" ph="select DISTI... " />
+            <marker date="1508101661603" expanded="true" signature="4548:4860" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="4548:4861" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="4548:4967" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="6745:7077" ph="SELECT nickn... t" />
+            <marker date="1508101661603" expanded="true" signature="7817:7957" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8024" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8025" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="7817:8053" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8058" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8091" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8136" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="8430:8525" ph="UPDATE \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="9004:9037" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9004:9039" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9352:9390" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9352:9391" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9717:10190" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="10652:11134" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="12177:12219" ph="SELECT id fr... Forum" />
+            <marker date="1508101661603" expanded="true" signature="12597:12829" ph="SELECT nickn... thread" />
+            <marker date="1508101661603" expanded="true" signature="13981:14020" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="14718:14867" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1508101661603" expanded="true" signature="15245:15414" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="16298:16451" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="17007:17130" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="18355:18516" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="19425:19464" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="20380:20681" ph="select t.id,... t" />
+            <marker date="1508101661603" expanded="true" signature="20842:20934" ph="UPDATE \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="21710:22060" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="22501:22615" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="22914:23209" ph="SELECT nickn... thread" />
+            <marker date="1508101661603" expanded="true" signature="23534:23845" ph="SELECT &quot;Foru... Forum" />
+            <marker date="1508101661603" expanded="true" signature="24230:24580" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="25009:25080" ph="UPDATE post " />
+            <marker date="1508101661603" expanded="true" signature="25117:25467" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="26049:26065" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26095:26111" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26140:26158" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26188:26209" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26239:26259" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26652:26965" ph="SELECT (SELE... " />
+            <marker date="1508101661603" expanded="true" signature="26693:26724" ph="SELECT count... Forum" />
+            <marker date="1508101661603" expanded="true" signature="26773:26800" ph="SELECT count... post" />
+            <marker date="1508101661603" expanded="true" signature="26848:26876" ph="SELECT count... thread" />
+            <marker date="1508101661603" expanded="true" signature="26922:26952" ph="SELECT count... User" />
+            <marker date="1508101661603" expanded="true" signature="27828:27867" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="28172:28348" ph="SELECT id fr... vote" />
+            <marker date="1508101661603" expanded="true" signature="28259:28304" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="28535:28984" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="29214:29383" ph="INSERT INTO vote... " />
+            <marker date="1508101661603" expanded="true" signature="29298:29343" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="29416:29494" ph="UPDATE threa... " />
+            <marker date="1508101661603" expanded="true" signature="29567:30016" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="30520:30690" ph="UPDATE vote " />
+            <marker date="1508101661603" expanded="true" signature="30644:30689" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="30731:30781" ph="UPDATE threa... " />
+            <marker date="1508101661603" expanded="true" signature="30869:31318" ph="SELECT u.nic... thread" />
           </folding>
         </state>
       </provider>
@@ -627,75 +630,76 @@
           <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <marker date="1508095449071" expanded="true" signature="1290:1433" ph="SELECT posts... t" />
-            <marker date="1508095449071" expanded="true" signature="1296:1433" ph="select posts... t" />
-            <marker date="1508095449071" expanded="true" signature="2029:2431" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2420:2431" ph="SELECT posts... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2925:3287" ph="SELECT \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="2925:3288" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2931:3227" ph="select forum... " />
-            <marker date="1508095449071" expanded="true" signature="2931:3286" ph="SELECT posts... Forum" />
-            <marker date="1508095449071" expanded="true" signature="3775:3817" ph="SELECT id fr... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4435" ph="select DISTI... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4505" ph="select DISTI... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4967" ph="select DISTI... " />
-            <marker date="1508095449071" expanded="true" signature="4548:4860" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="4548:4861" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="4548:4967" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="6745:7077" ph="SELECT nickn... t" />
-            <marker date="1508095449071" expanded="true" signature="7817:7957" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8024" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8025" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="7817:8053" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8058" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8091" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8136" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="8430:8525" ph="UPDATE \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="9004:9037" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9004:9039" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9352:9390" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9352:9391" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9717:10190" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="10652:11134" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="12216:12258" ph="SELECT id fr... Forum" />
-            <marker date="1508095449071" expanded="true" signature="12636:12868" ph="SELECT nickn... thread" />
-            <marker date="1508095449071" expanded="true" signature="14330:14479" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1508095449071" expanded="true" signature="14857:15026" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="15910:16063" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="16619:16742" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="17967:18128" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="19037:19076" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="19992:20293" ph="select t.id,... t" />
-            <marker date="1508095449071" expanded="true" signature="20454:20546" ph="UPDATE \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="21322:21672" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="22113:22227" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="22526:22821" ph="SELECT nickn... thread" />
-            <marker date="1508095449071" expanded="true" signature="23146:23457" ph="SELECT &quot;Foru... Forum" />
-            <marker date="1508095449071" expanded="true" signature="23842:24192" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="24621:24692" ph="UPDATE post " />
-            <marker date="1508095449071" expanded="true" signature="24729:25079" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="25661:25677" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25707:25723" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25752:25770" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25800:25821" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25851:25871" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="26264:26577" ph="SELECT (SELE... " />
-            <marker date="1508095449071" expanded="true" signature="26305:26336" ph="SELECT count... Forum" />
-            <marker date="1508095449071" expanded="true" signature="26385:26412" ph="SELECT count... post" />
-            <marker date="1508095449071" expanded="true" signature="26460:26488" ph="SELECT count... thread" />
-            <marker date="1508095449071" expanded="true" signature="26534:26564" ph="SELECT count... User" />
-            <marker date="1508095449071" expanded="true" signature="27440:27479" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="27727:27903" ph="SELECT id fr... vote" />
-            <marker date="1508095449071" expanded="true" signature="27814:27859" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="28090:28539" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="28769:28938" ph="INSERT INTO vote... " />
-            <marker date="1508095449071" expanded="true" signature="28853:28898" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="28971:29049" ph="UPDATE threa... " />
-            <marker date="1508095449071" expanded="true" signature="29122:29571" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="30075:30245" ph="UPDATE vote " />
-            <marker date="1508095449071" expanded="true" signature="30199:30244" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="30286:30336" ph="UPDATE threa... " />
-            <marker date="1508095449071" expanded="true" signature="30424:30873" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="1290:1433" ph="SELECT posts... t" />
+            <marker date="1508101661603" expanded="true" signature="1296:1433" ph="select posts... t" />
+            <marker date="1508101661603" expanded="true" signature="2029:2431" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2420:2431" ph="SELECT posts... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2925:3287" ph="SELECT \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="2925:3288" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2931:3227" ph="select forum... " />
+            <marker date="1508101661603" expanded="true" signature="2931:3286" ph="SELECT posts... Forum" />
+            <marker date="1508101661603" expanded="true" signature="3775:3817" ph="SELECT id fr... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4435" ph="select DISTI... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4505" ph="select DISTI... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4967" ph="select DISTI... " />
+            <marker date="1508101661603" expanded="true" signature="4548:4860" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="4548:4861" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="4548:4967" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="6745:7077" ph="SELECT nickn... t" />
+            <marker date="1508101661603" expanded="true" signature="7817:7957" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8024" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8025" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="7817:8053" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8058" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8091" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8136" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="8430:8525" ph="UPDATE \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="9004:9037" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9004:9039" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9352:9390" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9352:9391" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9717:10190" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="10652:11134" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="12177:12219" ph="SELECT id fr... Forum" />
+            <marker date="1508101661603" expanded="true" signature="12597:12829" ph="SELECT nickn... thread" />
+            <marker date="1508101661603" expanded="true" signature="13981:14020" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="14718:14867" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1508101661603" expanded="true" signature="15245:15414" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="16298:16451" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="17007:17130" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="18355:18516" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="19425:19464" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="20380:20681" ph="select t.id,... t" />
+            <marker date="1508101661603" expanded="true" signature="20842:20934" ph="UPDATE \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="21710:22060" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="22501:22615" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="22914:23209" ph="SELECT nickn... thread" />
+            <marker date="1508101661603" expanded="true" signature="23534:23845" ph="SELECT &quot;Foru... Forum" />
+            <marker date="1508101661603" expanded="true" signature="24230:24580" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="25009:25080" ph="UPDATE post " />
+            <marker date="1508101661603" expanded="true" signature="25117:25467" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="26049:26065" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26095:26111" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26140:26158" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26188:26209" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26239:26259" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26652:26965" ph="SELECT (SELE... " />
+            <marker date="1508101661603" expanded="true" signature="26693:26724" ph="SELECT count... Forum" />
+            <marker date="1508101661603" expanded="true" signature="26773:26800" ph="SELECT count... post" />
+            <marker date="1508101661603" expanded="true" signature="26848:26876" ph="SELECT count... thread" />
+            <marker date="1508101661603" expanded="true" signature="26922:26952" ph="SELECT count... User" />
+            <marker date="1508101661603" expanded="true" signature="27828:27867" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="28172:28348" ph="SELECT id fr... vote" />
+            <marker date="1508101661603" expanded="true" signature="28259:28304" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="28535:28984" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="29214:29383" ph="INSERT INTO vote... " />
+            <marker date="1508101661603" expanded="true" signature="29298:29343" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="29416:29494" ph="UPDATE threa... " />
+            <marker date="1508101661603" expanded="true" signature="29567:30016" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="30520:30690" ph="UPDATE vote " />
+            <marker date="1508101661603" expanded="true" signature="30644:30689" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="30731:30781" ph="UPDATE threa... " />
+            <marker date="1508101661603" expanded="true" signature="30869:31318" ph="SELECT u.nic... thread" />
           </folding>
         </state>
       </provider>
@@ -823,16 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="67" />
-          <folding>
-            <element signature="e#648#680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -849,81 +843,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DB_TP_ForumApp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="33" column="53" lean-forward="true" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+          <folding>
+            <element signature="e#648#680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="245" column="36" lean-forward="false" selection-start-line="245" selection-start-column="36" selection-end-line="245" selection-end-column="36" />
+        <state relative-caret-position="238">
+          <caret line="649" column="41" lean-forward="false" selection-start-line="649" selection-start-column="41" selection-end-line="649" selection-end-column="41" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-            <marker date="1508095449071" expanded="true" signature="1290:1433" ph="SELECT posts... t" />
-            <marker date="1508095449071" expanded="true" signature="1296:1433" ph="select posts... t" />
-            <marker date="1508095449071" expanded="true" signature="2029:2431" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2420:2431" ph="SELECT posts... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2925:3287" ph="SELECT \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="2925:3288" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="2931:3227" ph="select forum... " />
-            <marker date="1508095449071" expanded="true" signature="2931:3286" ph="SELECT posts... Forum" />
-            <marker date="1508095449071" expanded="true" signature="3775:3817" ph="SELECT id fr... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4435" ph="select DISTI... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4505" ph="select DISTI... Forum" />
-            <marker date="1508095449071" expanded="true" signature="4185:4967" ph="select DISTI... " />
-            <marker date="1508095449071" expanded="true" signature="4548:4860" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="4548:4861" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="4548:4967" ph="select DISTI... post" />
-            <marker date="1508095449071" expanded="true" signature="6745:7077" ph="SELECT nickn... t" />
-            <marker date="1508095449071" expanded="true" signature="7817:7957" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8024" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8025" ph="SELECT \&quot;For... Forum" />
-            <marker date="1508095449071" expanded="true" signature="7817:8053" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8058" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8091" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="7817:8136" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="8430:8525" ph="UPDATE \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="9004:9037" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9004:9039" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9352:9390" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9352:9391" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="9717:10190" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="10652:11134" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="12216:12258" ph="SELECT id fr... Forum" />
-            <marker date="1508095449071" expanded="true" signature="12636:12868" ph="SELECT nickn... thread" />
-            <marker date="1508095449071" expanded="true" signature="14330:14479" ph="INSERT INTO \&quot;User\&quot;... " />
-            <marker date="1508095449071" expanded="true" signature="14857:15026" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="15910:16063" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="16619:16742" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="17967:18128" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="19037:19076" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="19992:20293" ph="select t.id,... t" />
-            <marker date="1508095449071" expanded="true" signature="20454:20546" ph="UPDATE \&quot;For... " />
-            <marker date="1508095449071" expanded="true" signature="21322:21672" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="22113:22227" ph="SELECT about... User" />
-            <marker date="1508095449071" expanded="true" signature="22526:22821" ph="SELECT nickn... thread" />
-            <marker date="1508095449071" expanded="true" signature="23146:23457" ph="SELECT &quot;Foru... Forum" />
-            <marker date="1508095449071" expanded="true" signature="23842:24192" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="24621:24692" ph="UPDATE post " />
-            <marker date="1508095449071" expanded="true" signature="24729:25079" ph="select u.nic... post" />
-            <marker date="1508095449071" expanded="true" signature="25661:25677" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25707:25723" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25752:25770" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25800:25821" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="25851:25871" ph="DELETE FROM " />
-            <marker date="1508095449071" expanded="true" signature="26264:26577" ph="SELECT (SELE... " />
-            <marker date="1508095449071" expanded="true" signature="26305:26336" ph="SELECT count... Forum" />
-            <marker date="1508095449071" expanded="true" signature="26385:26412" ph="SELECT count... post" />
-            <marker date="1508095449071" expanded="true" signature="26460:26488" ph="SELECT count... thread" />
-            <marker date="1508095449071" expanded="true" signature="26534:26564" ph="SELECT count... User" />
-            <marker date="1508095449071" expanded="true" signature="27440:27479" ph="SELECT id fr... thread" />
-            <marker date="1508095449071" expanded="true" signature="27727:27903" ph="SELECT id fr... vote" />
-            <marker date="1508095449071" expanded="true" signature="27814:27859" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="28090:28539" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="28769:28938" ph="INSERT INTO vote... " />
-            <marker date="1508095449071" expanded="true" signature="28853:28898" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="28971:29049" ph="UPDATE threa... " />
-            <marker date="1508095449071" expanded="true" signature="29122:29571" ph="SELECT u.nic... thread" />
-            <marker date="1508095449071" expanded="true" signature="30075:30245" ph="UPDATE vote " />
-            <marker date="1508095449071" expanded="true" signature="30199:30244" ph="SELECT id FR... User" />
-            <marker date="1508095449071" expanded="true" signature="30286:30336" ph="UPDATE threa... " />
-            <marker date="1508095449071" expanded="true" signature="30424:30873" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="1290:1433" ph="SELECT posts... t" />
+            <marker date="1508101661603" expanded="true" signature="1296:1433" ph="select posts... t" />
+            <marker date="1508101661603" expanded="true" signature="2029:2431" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2420:2431" ph="SELECT posts... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2925:3287" ph="SELECT \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="2925:3288" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="2931:3227" ph="select forum... " />
+            <marker date="1508101661603" expanded="true" signature="2931:3286" ph="SELECT posts... Forum" />
+            <marker date="1508101661603" expanded="true" signature="3775:3817" ph="SELECT id fr... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4435" ph="select DISTI... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4505" ph="select DISTI... Forum" />
+            <marker date="1508101661603" expanded="true" signature="4185:4967" ph="select DISTI... " />
+            <marker date="1508101661603" expanded="true" signature="4548:4860" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="4548:4861" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="4548:4967" ph="select DISTI... post" />
+            <marker date="1508101661603" expanded="true" signature="6745:7077" ph="SELECT nickn... t" />
+            <marker date="1508101661603" expanded="true" signature="7817:7957" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8024" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8025" ph="SELECT \&quot;For... Forum" />
+            <marker date="1508101661603" expanded="true" signature="7817:8053" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8058" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8091" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="7817:8136" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="8430:8525" ph="UPDATE \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="9004:9037" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9004:9039" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9352:9390" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9352:9391" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="9717:10190" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="10652:11134" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="12177:12219" ph="SELECT id fr... Forum" />
+            <marker date="1508101661603" expanded="true" signature="12597:12829" ph="SELECT nickn... thread" />
+            <marker date="1508101661603" expanded="true" signature="13981:14020" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="14718:14867" ph="INSERT INTO \&quot;User\&quot;... " />
+            <marker date="1508101661603" expanded="true" signature="15245:15414" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="16298:16451" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="17007:17130" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="18355:18516" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="19425:19464" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="20380:20681" ph="select t.id,... t" />
+            <marker date="1508101661603" expanded="true" signature="20842:20934" ph="UPDATE \&quot;For... " />
+            <marker date="1508101661603" expanded="true" signature="21710:22060" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="22501:22615" ph="SELECT about... User" />
+            <marker date="1508101661603" expanded="true" signature="22914:23209" ph="SELECT nickn... thread" />
+            <marker date="1508101661603" expanded="true" signature="23534:23845" ph="SELECT &quot;Foru... Forum" />
+            <marker date="1508101661603" expanded="true" signature="24230:24580" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="25009:25080" ph="UPDATE post " />
+            <marker date="1508101661603" expanded="true" signature="25117:25467" ph="select u.nic... post" />
+            <marker date="1508101661603" expanded="true" signature="26049:26065" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26095:26111" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26140:26158" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26188:26209" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26239:26259" ph="DELETE FROM " />
+            <marker date="1508101661603" expanded="true" signature="26652:26965" ph="SELECT (SELE... " />
+            <marker date="1508101661603" expanded="true" signature="26693:26724" ph="SELECT count... Forum" />
+            <marker date="1508101661603" expanded="true" signature="26773:26800" ph="SELECT count... post" />
+            <marker date="1508101661603" expanded="true" signature="26848:26876" ph="SELECT count... thread" />
+            <marker date="1508101661603" expanded="true" signature="26922:26952" ph="SELECT count... User" />
+            <marker date="1508101661603" expanded="true" signature="27828:27867" ph="SELECT id fr... thread" />
+            <marker date="1508101661603" expanded="true" signature="28172:28348" ph="SELECT id fr... vote" />
+            <marker date="1508101661603" expanded="true" signature="28259:28304" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="28535:28984" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="29214:29383" ph="INSERT INTO vote... " />
+            <marker date="1508101661603" expanded="true" signature="29298:29343" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="29416:29494" ph="UPDATE threa... " />
+            <marker date="1508101661603" expanded="true" signature="29567:30016" ph="SELECT u.nic... thread" />
+            <marker date="1508101661603" expanded="true" signature="30520:30690" ph="UPDATE vote " />
+            <marker date="1508101661603" expanded="true" signature="30644:30689" ph="SELECT id FR... User" />
+            <marker date="1508101661603" expanded="true" signature="30731:30781" ph="UPDATE threa... " />
+            <marker date="1508101661603" expanded="true" signature="30869:31318" ph="SELECT u.nic... thread" />
           </folding>
         </state>
       </provider>
