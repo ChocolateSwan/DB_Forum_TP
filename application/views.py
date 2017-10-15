@@ -206,9 +206,11 @@ def thread_details(request, slug_or_id):
             id_thread = slug_or_id
         else:
             cursor.execute("SELECT id from thread WHERE slug = '{}'".format(slug_or_id))
-            id_thread = cursor.fetchone()['id']
+            id_thread = cursor.fetchone()
             if id_thread is None:
                 return JsonResponse({"message": "No thread"}, status=404, )
+            else:
+                id_thread = id_thread[id]
         #Get request
         if request.method == "GET":
             req_select_thread =" SELECT u.nickname AS \"author\", thread.created, " \
@@ -226,7 +228,16 @@ def thread_details(request, slug_or_id):
                                 status=200, )
         # POST method
         else:
+            print "hello"
+
             data = json.loads(request.body.decode('utf-8'))
+            req_select_thread = " SELECT u.nickname AS \"author\", thread.created, " \
+                                "f.slug AS \"forum\", thread.id," \
+                                "thread.message,thread.slug, thread.title, thread.votes \
+                                 FROM thread  \
+                                 INNER JOIN \"User\" u ON thread.author_id = u.id  \
+                                 INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
+                                "WHERE  thread.id = {};".format(id_thread)
             # Generate UPDATE thread
             req_update_thread = "UPDATE thread SET "
             for key in data:
@@ -237,13 +248,6 @@ def thread_details(request, slug_or_id):
             try:
                 cursor.execute(req_update_thread)
                 connection.commit()
-                req_select_thread = " SELECT u.nickname AS \"author\", thread.created, " \
-                                   "f.slug AS \"forum\", thread.id," \
-                                   "thread.message,thread.slug, thread.title, thread.votes \
-                                    FROM thread  \
-                                    INNER JOIN \"User\" u ON thread.author_id = u.id  \
-                                    INNER JOIN \"Forum\" f ON thread.forum_id = f.id " \
-                                   "WHERE  thread.id = {};".format(id_thread)
                 cursor.execute(req_select_thread)
                 tr = cursor.fetchone()
                 return JsonResponse(dict(tr), status=200, )
