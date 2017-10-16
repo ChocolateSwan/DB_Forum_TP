@@ -359,7 +359,7 @@ Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as 
                  INNER JOIN "User" u ON p.author_id = u.id 
                  inner join thread on thread.id = p.thread_id 
                  inner join "Forum" f on thread.forum_id = f.id 
-                 where p.parent = 0 and p.thread_id = {} 
+                 where p.parent = 0 and p.thread_id = {} {}
 
                  union 
                  Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
@@ -372,10 +372,15 @@ Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as 
                  inner join temp on temp.id = p.parent
                  where p.thread_id = {}
 )
-select * from temp  ORDER BY PATH {}
+select * from temp
+ ORDER BY PATH {}
  {}
 '''.format(id_thread,
+           "where temp.id > '{}'".format(request.GET.get('since')) if request.GET.get('since') is not None else " ",
+           # Новое
            id_thread,
+
+
            "DESC " if request.GET.get('desc') == "true" else "ASC ",
            "LIMIT {}".format(int(request.GET.get('limit'))) if request.GET.get('limit') is not None else " "
            )
