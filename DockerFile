@@ -45,7 +45,7 @@ VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 USER root
 
 # Копируем исходный код в Docker-контейнер
-ENV WORK /opt/TechnoparkDB
+ENV WORK /home/olyasur/PycharmProjects/DB_TP_ForumApp
 ADD dataBase.sql $WORK/dataBase.sql
 
 # Объявлем порт сервера
