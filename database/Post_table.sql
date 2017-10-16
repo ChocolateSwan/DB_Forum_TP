@@ -6,7 +6,7 @@
     forum_id INT NOT NULL,
     isEdited BOOLEAN DEFAULT FALSE NOT NULL,
     message TEXT NOT NULL,
-    parent INT DEFAULT 0,
+    parent INT NOT NULL DEFAULT 0,
     thread_id INT NOT NULL,
     
 

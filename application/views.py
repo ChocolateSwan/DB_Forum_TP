@@ -682,7 +682,7 @@ def create_post(request, slug_or_id):
             req_insert_posts += " ((SELECT id FROM \"User\" WHERE nickname = '{}'), now(), '{}',{},{}),"\
                 .format(post['author'],
                         post['message'],
-                        0 if post.get('parent') is None else int(post.get('parent')),
+                        0 if post.get('parent') is None else " (select id from post where id = {} and thread_id = {}) ".format(int(post.get('parent')),id_thread),
                         id_thread)
 
         req_insert_posts = req_insert_posts[:req_insert_posts.rfind(',')]
@@ -702,11 +702,15 @@ def create_post(request, slug_or_id):
 
             return JsonResponse(result, safe=False, status=201)
         except psycopg2.Error as err:
-            print "99999999999999999999999"
+            print err.message
+
+
             if "author_id" in err.message:
                 return JsonResponse({"message": "no author"}, status=404)
             if "thread" in err.message:
                 return JsonResponse({"message": "no thread"}, status=404)
+            if "parent" in err.message:
+                return JsonResponse({"message": "no parent"}, status=409)
 
             print err.message
             pass
