@@ -319,8 +319,122 @@ def thread_posts(request,slug_or_id):
                 return JsonResponse({"message": "No thread"}, status=404, )
             else:
                 id_thread = id_thread['id']
+        print request.GET
+        if request.GET.get('sort') == "flat" or request.GET.get('sort') is None:
+            print "hello"
+            req_select_posts = '''
+                            Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                 p.message, p.parent,p.thread_id as "thread" 
+                 from post p  
+                 INNER JOIN "User" u ON p.author_id = u.id 
+                 inner join thread on thread.id = p.thread_id 
+                 inner join "Forum" f on thread.forum_id = f.id 
+                 where thread.id = {} {}
+                order by p.created {} , p.id {}
+                {}
+            '''.format(id_thread,
+                       "and p.id > '{}'".format(request.GET.get('since')) if request.GET.get('since') is not None else " ",
+                       "DESC " if request.GET.get('desc') == "true" else "ASC ",
+                       "DESC " if request.GET.get('desc') == "true" else "ASC ",
+                       "LIMIT {}".format(int(request.GET.get('limit'))) if request.GET.get('limit') is not None else " "
 
+                       )
+            if request.GET.get('desc') == "true":
+                req_select_posts = req_select_posts.replace('>', '<')
 
+            try:
+                cursor.execute(req_select_posts)
+                posts = cursor.fetchall()
+                return JsonResponse(map(lambda x: dict(x), posts),
+                                safe=False,
+                                status=200)
+            except psycopg2.Error as err:
+                print err.message
+        if request.GET.get('sort') == "tree":
+            req_select_posts = \
+            '''WITH RECURSIVE temp (id, "author","created","forum","isEdited","message","parent","thread",PATH, LEVEL ) AS (
+Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                 p.message, p.parent,p.thread_id as "thread" , CAST(p.id as VARCHAR(50)) as PATH, 1 
+                 from post p  
+                 INNER JOIN "User" u ON p.author_id = u.id 
+                 inner join thread on thread.id = p.thread_id 
+                 inner join "Forum" f on thread.forum_id = f.id 
+                 where p.parent = 0 and p.thread_id = {} 
+
+                 union 
+                 Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                 p.message, p.parent,p.thread_id as "thread" , CAST(temp.PATH || '.' || p.id as VARCHAR(50)), LEVEL + 1
+
+		from post p  
+                 INNER JOIN "User" u ON p.author_id = u.id 
+                 inner join thread on thread.id = p.thread_id 
+                 inner join "Forum" f on thread.forum_id = f.id 
+                 inner join temp on temp.id = p.parent
+                 where p.thread_id = {}
+)
+select * from temp  ORDER BY PATH {}
+ {}
+'''.format(id_thread,
+           id_thread,
+           "DESC " if request.GET.get('desc') == "true" else "ASC ",
+           "LIMIT {}".format(int(request.GET.get('limit'))) if request.GET.get('limit') is not None else " "
+           )
+            try:
+                cursor.execute(req_select_posts)
+                posts = cursor.fetchall()
+                return JsonResponse(map(lambda x: dict(x), posts),
+                                    safe=False,
+                                    status=200)
+            except psycopg2.Error as err:
+                print err.message
+        if request.GET.get('sort') == "parent_tree":
+            print "parent_tree"
+            print " {} ".format(int(request.GET.get('limit'))) if request.GET.get('limit') is not None else " "
+            req_select_posts = \
+                '''
+                          WITH RECURSIVE temp (id, "author","created","forum","isEdited","message","parent","thread",PATH, LEVEL ) AS (
+                Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                                 p.message, p.parent,p.thread_id as "thread" , CAST(p.id as VARCHAR(50)) as PATH, 1 
+                                 from (  select id, author_id,created,isEdited,message,parent,thread_id from post 
+					where parent = 0 and thread_id = {}
+					{} )  p
+                                 INNER JOIN "User" u ON p.author_id = u.id 
+                                 inner join thread on thread.id = p.thread_id 
+                                 inner join "Forum" f on thread.forum_id = f.id 
+                                 where p.parent = 0 and p.thread_id = {}
+                    
+                                 union 
+                                 Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                                 p.message, p.parent,p.thread_id as "thread" , CAST(temp.PATH || '.' || p.id as VARCHAR(50)), LEVEL + 1
+                
+                        from post p  
+                                 INNER JOIN "User" u ON p.author_id = u.id 
+                                 inner join thread on thread.id = p.thread_id 
+                                 inner join "Forum" f on thread.forum_id = f.id 
+                                 inner join temp on temp.id = p.parent
+                                 where p.thread_id = {}
+                
+                )
+                           
+				select * from temp ORDER BY PATH {}
+            
+            '''.format(id_thread,
+                       "LIMIT {} ".format(int(request.GET.get('limit')) + 1) if request.GET.get('limit') is not None else " ",
+                        id_thread,
+                        id_thread,
+                       "DESC " if request.GET.get('desc') == "true" else "ASC "
+
+                       )
+
+            try:
+                print req_select_posts
+                cursor.execute(req_select_posts)
+                posts = cursor.fetchall()
+                return JsonResponse(map(lambda x: dict(x), posts),
+                                    safe=False,
+                                    status=200)
+            except psycopg2.Error as err:
+                print err.message
 
 
 
@@ -468,7 +582,7 @@ def create_post(request, slug_or_id):
         req_insert_posts = req_insert_posts[:req_insert_posts.rfind(',')]
         req_insert_posts += " RETURNING id, author_id, created,isedited, message,parent,thread_id)"
         req_insert_posts += "select t.id, u.nickname as \"author\", t.created,f.slug as \"forum\", t.isedited, t.message, t.parent,thread_id\
-                             as \"thread\" from t  INNER JOIN \"User\" u ON t.author_id = u.id inner join thread on thread.id = t.thread_id inner join \"Forum\" f on thread.forum_id = f.id;"
+                             as \"thread\" from t  INNER JOIN \"User\" u ON t.author_id = u.id inner join thread on thread.id = t.thread_id inner join \"Forum\" f on thread.forum_id = f.id ORDER BY t.id" \
 
         try:
             cursor.execute(req_insert_posts)
@@ -477,6 +591,9 @@ def create_post(request, slug_or_id):
             cursor.execute("BEGIN; UPDATE \"Forum\" SET posts = posts + {} " \
                               "WHERE slug = '{}' ; COMMIT;".format( len(result),result[0]['forum']))
             # user = cursor.fetchone()
+            # тот же порядок
+
+
             return JsonResponse(result, safe=False, status=201)
         except psycopg2.Error as err:
             print "99999999999999999999999"
