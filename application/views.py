@@ -310,6 +310,12 @@ def thread_posts(request,slug_or_id):
     with get_cursor() as (cursor, connection):
         id_thread = None
         if slug_or_id.isdigit():
+            cursor.execute("SELECT id from thread WHERE id = {}".format(slug_or_id))
+            id_thread = cursor.fetchone()
+            if id_thread is None:
+                return JsonResponse({"message": "No thread"}, status=404, )
+            else:
+                id_thread = id_thread['id']
             id_thread = slug_or_id
         else:
             print slug_or_id
@@ -345,7 +351,6 @@ def thread_posts(request,slug_or_id):
             try:
                 cursor.execute(req_select_posts)
                 posts = cursor.fetchall()
-
                 return JsonResponse(map(lambda x: dict(x), posts),
                                 safe=False,
                                 status=200)
