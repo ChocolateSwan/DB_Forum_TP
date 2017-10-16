@@ -350,44 +350,86 @@ def thread_posts(request,slug_or_id):
                                 status=200)
             except psycopg2.Error as err:
                 print err.message
+            # Tree sort
         if request.GET.get('sort') == "tree":
-            req_select_posts = \
-            '''WITH RECURSIVE temp (id, "author","created","forum","isEdited","message","parent","thread",PATH, LEVEL ) AS (
-Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
-                 p.message, p.parent,p.thread_id as "thread" , CAST(p.id as VARCHAR(50)) as PATH, 1 
-                 from post p  
-                 INNER JOIN "User" u ON p.author_id = u.id 
-                 inner join thread on thread.id = p.thread_id 
-                 inner join "Forum" f on thread.forum_id = f.id 
-                 where p.parent = 0 and p.thread_id = {} {}
+            print "qqq"
+            print request.GET
+            if request.GET.get('since') is not None:
+                                req_select_posts = '''
+                                WITH RECURSIVE temp (id, "author","created","forum","isEdited","message","parent","thread",PATH, LEVEL ) AS (
+                    Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                                 p.message, p.parent,p.thread_id as "thread" , array[p.id] as PATH, 1
+                                 from post p
+                                 INNER JOIN "User" u ON p.author_id = u.id
+                                 inner join thread on thread.id = p.thread_id
+                                 inner join "Forum" f on thread.forum_id = f.id
+                                 where p.parent = 0 and p.thread_id = {}
 
-                 union 
-                 Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
-                 p.message, p.parent,p.thread_id as "thread" , CAST(temp.PATH || '.' || p.id as VARCHAR(50)), LEVEL + 1
+                                 union
+                                 Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                                 p.message, p.parent,p.thread_id as "thread" , temp.PATH || p.id , LEVEL + 1
 
-		from post p  
-                 INNER JOIN "User" u ON p.author_id = u.id 
-                 inner join thread on thread.id = p.thread_id 
-                 inner join "Forum" f on thread.forum_id = f.id 
-                 inner join temp on temp.id = p.parent
-                 where p.thread_id = {}
-)
-select * from temp
- ORDER BY PATH {}
- {}
-'''.format(id_thread,
-           "where temp.id > '{}'".format(request.GET.get('since')) if request.GET.get('since') is not None else " ",
-           # Новое
-           id_thread,
+                        from post p
+                                 INNER JOIN "User" u ON p.author_id = u.id
+                                 inner join thread on thread.id = p.thread_id
+                                 inner join "Forum" f on thread.forum_id = f.id
+                                 inner join temp on temp.id = p.parent
+                                 where p.thread_id = {}
+                ), rows as(
+                select row_number() over (ORDER BY PATH ) as row_num, id, "author","created","forum","isEdited","message","parent","thread",PATH, LEVEL from temp
+                ), one_row as (
+                select * from rows where  id = {}
+                )
+                select rows.id, rows."author",rows."created",rows."forum",rows."isEdited",rows."message",rows."parent",rows."thread" from rows, one_row
+                where rows.row_num > one_row.row_num
+
+                 ORDER BY rows.PATH {}
+                 {}
+
+                                '''.format(id_thread,
+                                           id_thread,
+                                           request.GET.get('since') ,
+                                           "DESC " if request.GET.get('desc') == "true" else "ASC ",
+                                           "LIMIT {}".format(int(request.GET.get('limit'))) if request.GET.get('limit') is not None else " "
+                                 )
 
 
-           "DESC " if request.GET.get('desc') == "true" else "ASC ",
-           "LIMIT {}".format(int(request.GET.get('limit'))) if request.GET.get('limit') is not None else " "
-           )
+            else:
+                req_select_posts = \
+                '''WITH RECURSIVE temp (id, "author","created","forum","isEdited","message","parent","thread",PATH, LEVEL ) AS (
+                    Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                     p.message, p.parent,p.thread_id as "thread" , array[p.id] as PATH, 1 
+                     from post p  
+                     INNER JOIN "User" u ON p.author_id = u.id 
+                     inner join thread on thread.id = p.thread_id 
+                     inner join "Forum" f on thread.forum_id = f.id 
+                     where p.parent = 0 and p.thread_id = {} 
+    
+                     union 
+                     Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
+                     p.message, p.parent,p.thread_id as "thread" , temp.PATH || p.id , LEVEL + 1
+    
+            from post p  
+                     INNER JOIN "User" u ON p.author_id = u.id 
+                     inner join thread on thread.id = p.thread_id 
+                     inner join "Forum" f on thread.forum_id = f.id 
+                     inner join temp on temp.id = p.parent
+                     where p.thread_id = {} 
+    )
+    select * from temp
+     ORDER BY PATH {}
+     {}
+    '''.format(id_thread,
+               id_thread,
+               "DESC " if request.GET.get('desc') == "true" else "ASC ",
+               "LIMIT {}".format(int(request.GET.get('limit'))) if request.GET.get('limit') is not None else " "
+               )
             try:
+                print req_select_posts
                 cursor.execute(req_select_posts)
-                posts = cursor.fetchall()
-                return JsonResponse(map(lambda x: dict(x), posts),
+
+                post = cursor.fetchall()
+                return JsonResponse(map(lambda x: dict(x), post),
                                     safe=False,
                                     status=200)
             except psycopg2.Error as err:
@@ -399,7 +441,7 @@ select * from temp
                 '''
                           WITH RECURSIVE temp (id, "author","created","forum","isEdited","message","parent","thread",PATH, LEVEL ) AS (
                 Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
-                                 p.message, p.parent,p.thread_id as "thread" , CAST(p.id as VARCHAR(50)) as PATH, 1 
+                                 p.message, p.parent,p.thread_id as "thread" , array[p.id] as PATH, 1 
                                  from (  select id, author_id,created,isEdited,message,parent,thread_id from post 
 					where parent = 0 and thread_id = {}
 					{} )  p
@@ -410,7 +452,7 @@ select * from temp
                     
                                  union 
                                  Select p.id, u.nickname as "author", p.created,f.slug as "forum", p.isedited as "isEdited",
-                                 p.message, p.parent,p.thread_id as "thread" , CAST(temp.PATH || '.' || p.id as VARCHAR(50)), LEVEL + 1
+                                 p.message, p.parent,p.thread_id as "thread" , temp.PATH || p.id , LEVEL + 1
                 
                         from post p  
                                  INNER JOIN "User" u ON p.author_id = u.id 
@@ -431,8 +473,9 @@ select * from temp
 
                        )
 
+            print req_select_posts
             try:
-                print req_select_posts
+
                 cursor.execute(req_select_posts)
                 posts = cursor.fetchall()
                 return JsonResponse(map(lambda x: dict(x), posts),
